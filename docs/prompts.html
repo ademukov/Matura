@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1440">
+<title>Matura — промпты для ИИ-графики</title>
+<meta name="robots" content="noindex">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
+<style>
+body { margin: 0; }
+a { color: #8FD3FF; } a:hover { color: #C9E9FF; }
+.hd { font-family: 'Inter Tight', Inter, sans-serif; letter-spacing: -0.02em; }
+.mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+.lbl { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: #7FC8F5; }
+.pc { padding: 28px; border-radius: 18px; background: #0F1117; box-shadow: 0 0 0 1px rgba(255,255,255,.08) inset; display: flex; flex-direction: column; gap: 14px; }
+.chip { font-size: 11px; color: #B9C0CF; padding: 5px 9px; border-radius: 7px; background: rgba(255,255,255,.05); }
+.pr { margin: 0; padding: 16px 18px; border-radius: 12px; background: #07080B; box-shadow: 0 0 0 1px rgba(111,214,255,.18) inset; font-size: 12.5px; line-height: 1.7; color: #D4D9E3; white-space: pre-wrap; }
+.note { font-size: 13px; line-height: 1.55; color: #9AA1B2; margin: 0; }
+</style>
+
+<style>body{background:#07080B;}</style>
+</head>
+<body>
+<p style="margin:0;padding:16px 24px;font:14px Inter,sans-serif;background:#07080B;"><a href="../index.html">← К сайту</a></p>
+
+<div style="max-width: 1440px; margin: 0 auto; box-sizing: border-box; padding: 96px 112px; background: #07080B; color: #ECEEF3; font-family: Inter, system-ui, sans-serif; display: flex; flex-direction: column; gap: 48px;">
+
+<div style="display: flex; flex-direction: column; gap: 16px; max-width: 980px;">
+<span class="mono lbl">Графика · Matura</span>
+<h1 class="hd" style="margin: 0; font-size: 60px; font-weight: 600; line-height: 1.04;">Промпты для ИИ-графики</h1>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #A7AEBF;">Одна визуальная система: абстрактная 3D-графика, стекло, тонкие светящиеся линии на угольном фоне. Никаких людей в костюмах и рукопожатий. Каждая картинка — метафора одной практики.</p>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px;">
+<div class="pc"><span class="mono lbl">Стилевой якорь · добавлять ко всем</span><p class="pr mono">dark charcoal background #07080B, cyber blue #4CC9F0 and deep violet #7B5CFF rim light, frosted glass and polished glass materials, ultra-thin glowing lines, clean geometry, generous negative space, volumetric haze, cinematic lighting, premium tech aesthetic, octane render, 8k</p></div>
+<div class="pc"><span class="mono lbl">Негатив · Flux, Recraft, --no в MJ</span><p class="pr mono">people, faces, hands, business suits, handshake, office, stock photo, text, letters, numbers, logos, watermark, country borders, flags, cartoon, clutter, oversaturated neon, lens flare</p></div>
+<div class="pc"><span class="mono lbl">Как использовать</span><p class="note"><b style="color: #ECEEF3;">Midjourney v7</b>: промпт + якорь + параметры в конце, --style raw снижает «украшательство».</p><p class="note"><b style="color: #ECEEF3;">Flux</b>: тот же текст без параметров MJ, соотношение сторон задаётся в интерфейсе.</p><p class="note"><b style="color: #ECEEF3;">Recraft</b>: стиль «3D render» или «Digital illustration», палитра из двух акцентов, фон #07080B.</p></div>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px;">
+
+<div class="pc"><span class="mono lbl">01 · Первый экран</span><span class="hd" style="font-size: 22px; font-weight: 600;">Ядро и траектории данных</span><div style="display: flex; gap: 6px; flex-wrap: wrap;"><span class="chip mono">Hero, правая часть</span><span class="chip mono">16:9</span><span class="chip mono">можно анимировать</span></div>
+<p class="pr mono">Abstract 3D visualization of a banking core: a luminous crystalline sphere floating in a dark void, wrapped in a thin frosted-glass shell. Four ultra-thin glowing data trajectories in cyber blue and deep violet curve into the sphere from different directions like orbital paths, tiny bright light pulses travelling along them. A faint architectural grid floor fades into darkness below. Object on the right third, large empty negative space on the left for a headline. --ar 16:9 --style raw --s 250 --v 7</p>
+<p class="note">Для видео-петли: тот же кадр в Runway или Kling, «light pulses slowly travel along the curves, sphere rotates slightly», 6–8 с, бесшовно.</p></div>
+
+<div class="pc"><span class="mono lbl">02 · Стратегия и трансформация</span><span class="hd" style="font-size: 22px; font-weight: 600;">Слои, выстроенные одним лучом</span><div style="display: flex; gap: 6px; flex-wrap: wrap;"><span class="chip mono">Карточка практики</span><span class="chip mono">4:3</span></div>
+<p class="pr mono">Five translucent glass plates floating horizontally one above another over a dark reflective surface, each plate etched with fine blueprint lines, nodes and connectors. A single vertical beam of cyber-blue light pierces all plates through aligned openings, bringing them into perfect alignment, the top plate glowing faintly violet. Metaphor of a strategy that connects every level of an organization. Calm, precise, architectural. --ar 4:3 --style raw --s 200 --v 7</p></div>
+
+<div class="pc"><span class="mono lbl">03 · Международная экспансия</span><span class="hd" style="font-size: 22px; font-weight: 600;">Дуга между двумя рынками</span><div style="display: flex; gap: 6px; flex-wrap: wrap;"><span class="chip mono">Карточка + страница практики</span><span class="chip mono">16:9</span></div>
+<p class="pr mono">A dark planet rendered as an ultra-fine wireframe of latitude and longitude lines, no continents, no borders. A single bright arc of light rises from the west side of the horizon and lands far to the east, tracing the curvature of the globe. At each end of the arc sits a small hexagonal glass tile with a soft inner glow, one cyber blue, one deep violet, representing a headquarters and a new branch. Deep space darkness, subtle atmospheric rim. --ar 16:9 --style raw --s 250 --v 7</p></div>
+
+<div class="pc"><span class="mono lbl">04 · Банковские платформы</span><span class="hd" style="font-size: 22px; font-weight: 600;">Стеклянное хранилище-ядро</span><div style="display: flex; gap: 6px; flex-wrap: wrap;"><span class="chip mono">Карточка практики</span><span class="chip mono">4:3</span><span class="chip mono">финтех-мотив</span></div>
+<p class="pr mono">A monolithic vault core made of concentric rings of frosted glass, slowly rotating at different angles like a precise mechanism. The rings are engraved with tiny ledger-like micro patterns and transaction lines. Thin streams of light particles enter and leave through precise slots in the rings, cyber blue in, violet out, suggesting payments flowing through a core banking system. Engineered, secure, calm. --ar 4:3 --style raw --s 200 --v 7</p></div>
+
+<div class="pc"><span class="mono lbl">05 · Архитектура и импортонезависимость</span><span class="hd" style="font-size: 22px; font-weight: 600;">Город из модулей</span><div style="display: flex; gap: 6px; flex-wrap: wrap;"><span class="chip mono">Карточка практики</span><span class="chip mono">4:3</span></div>
+<p class="pr mono">Isometric view of a minimal city made of modular glass blocks of different heights, standing on a dark grid. Blocks are connected by thin glowing conduits at their bases like an integration bus. Two blocks are being replaced: old opaque grey blocks lift away while new crystal-clear blocks slide down into their place with a soft violet glow. Metaphor of microservice architecture and platform migration. Clean, orderly, lots of empty dark space. --ar 4:3 --style raw --s 200 --v 7</p></div>
+
+<div class="pc"><span class="mono lbl">06 · Эффективность ИТ-поставки</span><span class="hd" style="font-size: 22px; font-weight: 600;">Коридор контрольных ворот</span><div style="display: flex; gap: 6px; flex-wrap: wrap;"><span class="chip mono">Секция «Качество» на главной</span><span class="chip mono">21:9</span><span class="chip mono">метафора автотестов</span></div>
+<p class="pr mono">A long dark corridor seen in one-point perspective, lined with evenly spaced transparent glass gates. A stream of tiny light particles flows through the gates toward the vanishing point. At each gate a few particles are filtered out and fall away as small violet sparks, so the stream becomes cleaner, denser and brighter with every gate, ending in a pure white-blue glow at the far end. Metaphor of automated tests and quality gates in a release pipeline. --ar 21:9 --style raw --s 250 --v 7</p></div>
+
+<div class="pc"><span class="mono lbl">07 · Искусственный интеллект</span><span class="hd" style="font-size: 22px; font-weight: 600;">Решётка решений в стекле</span><div style="display: flex; gap: 6px; flex-wrap: wrap;"><span class="chip mono">Карточка практики</span><span class="chip mono">4:3</span></div>
+<p class="pr mono">A frosted glass sphere resting on a dark mirror surface, containing a delicate three-dimensional lattice of thin connections and small nodes, like a crystal of reasoning. Most nodes glow dim cyber blue; one clear path through the lattice is highlighted in bright violet, as if a single decision is being traced from input to output. Refraction and caustics on the surface below. Precise, quiet, not sci-fi. --ar 4:3 --style raw --s 200 --v 7</p></div>
+
+<div class="pc"><span class="mono lbl">08 · Кейс: филиал в Китае</span><span class="hd" style="font-size: 22px; font-weight: 600;">Два ЦОДа и новый офис</span><div style="display: flex; gap: 6px; flex-wrap: wrap;"><span class="chip mono">Обложка кейса</span><span class="chip mono">16:9</span></div>
+<p class="pr mono">Two tall crystalline towers standing far apart on a dark reflective plane at night, each with thin horizontal glowing slits like server racks, one tinted cyber blue and one deep violet. A single bright optical fiber of light connects the towers in a gentle arc. In the foreground stands a small minimalist glass pavilion with warm soft light inside, representing a newly opened branch office ready for its first clients. Wide, calm, cinematic, abstract rather than literal. --ar 16:9 --style raw --s 250 --v 7</p></div>
+
+<div class="pc"><span class="mono lbl">09 · Форматы работы</span><span class="hd" style="font-size: 22px; font-weight: 600;">Лестница из стекла</span><div style="display: flex; gap: 6px; flex-wrap: wrap;"><span class="chip mono">Фон секции «Как мы работаем»</span><span class="chip mono">21:9</span></div>
+<p class="pr mono">Four ascending glass steps floating in darkness, each step larger and brighter than the previous one, from a small frosted cube to a wide luminous platform. A thin line of cyber-blue light runs along the front edges of the steps, rising from left to right, with a soft violet glow on the highest step. Metaphor of moving from a diagnostic to a full partnership. Minimal, symmetrical, lots of negative space. --ar 21:9 --style raw --s 200 --v 7</p></div>
+
+<div class="pc"><span class="mono lbl">10 · Текстура и обложка для соцсетей</span><span class="hd" style="font-size: 22px; font-weight: 600;">Фирменная сетка и кольца</span><div style="display: flex; gap: 6px; flex-wrap: wrap;"><span class="chip mono">Фоны секций · OG-картинка</span><span class="chip mono">21:9 и 1.91:1</span></div>
+<p class="pr mono">Seamless dark technology texture: an ultra-fine grid of hairline lines on charcoal, sparse intersections softly glowing cyber blue, a very gentle blue-to-violet gradient falloff from one corner, subtle film grain. --ar 21:9 --tile --style raw --v 7
+
+Brand key art: two concentric rings of polished glass floating in darkness, the inner ring broken into an arc segment, a small white light at the exact center, cyber blue and violet rim light, perfect symmetry, empty space around for a wordmark. --ar 1.91:1 --style raw --s 150 --v 7</p></div>
+
+</div>
+
+<p class="mono" style="margin: 0; font-size: 12px; line-height: 1.7; color: #7D8496;">Перед публикацией: проверьте лицензию выбранного генератора на коммерческое использование и оставьте исходные промпты и сиды в репозитории дизайна — так графику можно будет догенерировать в том же стиле.</p>
+</div>
+
+</body>
+</html>

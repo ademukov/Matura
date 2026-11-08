@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Matura — ИТ-консалтинг для банков</title>
+<meta name="description" content="Стратегия, смена платформ и выход на новые рынки — от решения правления до запуска. ИТ-консалтинг для банков: Россия, СНГ, Азия.">
+<meta name="robots" content="noindex">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
+<style>
+body { margin: 0; background: #07080B; }
+a { color: #8FD3FF; } a:hover { color: #C9E9FF; }
+.mt { font-family: Inter, system-ui, sans-serif; color: #ECEEF3; background: #07080B; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+.wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; box-sizing: border-box; }
+.hd { font-family: 'Inter Tight', Inter, sans-serif; letter-spacing: -0.02em; }
+.mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+.grad { background: linear-gradient(92deg, #4CC9F0 0%, #7B8CFF 45%, #A06BFF 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.btn { display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 22px; border-radius: 999px; font-size: 15px; font-weight: 500; text-decoration: none; transition: transform .4s cubic-bezier(.22,1,.36,1), box-shadow .4s, background .4s; }
+.btn-p { color: #07080B; background: linear-gradient(92deg, #6FD6FF, #9B8CFF); box-shadow: 0 0 0 1px rgba(255,255,255,.12) inset, 0 8px 32px -8px rgba(110,140,255,.55); }
+.btn-p:hover { color: #07080B; transform: translateY(-2px); box-shadow: 0 0 0 1px rgba(255,255,255,.2) inset, 0 14px 44px -8px rgba(120,150,255,.8); }
+.btn-g { color: #ECEEF3; background: rgba(255,255,255,.04); box-shadow: 0 0 0 1px rgba(255,255,255,.12) inset; }
+.btn-g:hover { color: #FFFFFF; background: rgba(255,255,255,.08); }
+.btn .ar { transition: transform .4s cubic-bezier(.22,1,.36,1); }
+.btn:hover .ar { transform: translateX(4px); }
+.nav a.nl { color: #A7AEBF; text-decoration: none; font-size: 14px; padding: 10px 4px; transition: color .3s; }
+.nav a.nl:hover { color: #FFFFFF; }
+.eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: #9AA1B2; padding: 8px 14px; border-radius: 999px; background: rgba(255,255,255,.03); box-shadow: 0 0 0 1px rgba(255,255,255,.08) inset; }
+.dot { width: 6px; height: 6px; border-radius: 50%; background: #4CC9F0; box-shadow: 0 0 12px #4CC9F0; animation: pulse 2.4s ease-in-out infinite; }
+.hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px); background-size: 64px 64px; -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, #000 30%, transparent 75%); mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, #000 30%, transparent 75%); animation: gridIn 1.6s cubic-bezier(.22,1,.36,1) both; }
+.glow-a { position: absolute; width: 720px; height: 720px; left: 50%; top: -360px; transform: translateX(-30%); border-radius: 50%; background: radial-gradient(circle, rgba(76,201,240,.18), transparent 60%); filter: blur(20px); animation: drift 14s ease-in-out infinite alternate; }
+.glow-b { position: absolute; width: 640px; height: 640px; right: -200px; top: 120px; border-radius: 50%; background: radial-gradient(circle, rgba(123,92,255,.20), transparent 60%); filter: blur(24px); animation: drift 18s ease-in-out infinite alternate-reverse; }
+.h1 { font-size: clamp(36px, 5.2vw, 68px); line-height: 1.02; font-weight: 600; margin: 0; }
+.h2 { font-size: clamp(32px, 4vw, 52px); line-height: 1.06; font-weight: 600; margin: 0; }
+.lead { font-size: 19px; line-height: 1.55; color: #A7AEBF; margin: 0; }
+.word { display: inline-block; animation: wordIn 1s cubic-bezier(.22,1,.36,1) both; }
+.w2 { animation-delay: .08s; } .w3 { animation-delay: .16s; } .w4 { animation-delay: .24s; } .w5 { animation-delay: .32s; }
+.fade1 { animation: up .9s .45s cubic-bezier(.22,1,.36,1) both; }
+.fade2 { animation: up .9s .6s cubic-bezier(.22,1,.36,1) both; }
+.fade3 { animation: up .9s .75s cubic-bezier(.22,1,.36,1) both; }
+.glass { box-sizing: border-box; background: linear-gradient(180deg, rgba(28,31,42,.72), rgba(14,16,22,.72)); -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px); box-shadow: 0 0 0 1px rgba(255,255,255,.08) inset, 0 30px 80px -30px rgba(0,0,0,.8); border-radius: 18px; }
+.term-line { opacity: 0; animation: termIn .5s cubic-bezier(.22,1,.36,1) forwards; white-space: nowrap; }
+.t1 { animation-delay: 1.0s; } .t2 { animation-delay: 1.6s; } .t3 { animation-delay: 2.2s; } .t4 { animation-delay: 2.8s; } .t5 { animation-delay: 3.5s; }
+.caret { display: inline-block; width: 8px; height: 15px; background: #4CC9F0; vertical-align: -2px; animation: blink 1s steps(2) infinite; }
+.trace { stroke-dasharray: 3 9; animation: flow 3.5s linear infinite; }
+.comet { stroke-dasharray: 60 900; stroke-dashoffset: 960; animation: comet 4.2s cubic-bezier(.45,0,.2,1) infinite; }
+.c2 { animation-delay: 1.4s; } .c3 { animation-delay: 2.6s; }
+.node { animation: nodePulse 3s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+.n2 { animation-delay: .6s; } .n3 { animation-delay: 1.2s; } .n4 { animation-delay: 1.8s; }
+.stat { padding: 28px 0; border-top: 1px solid rgba(255,255,255,.08); }
+.sec { padding: 140px 0 0; }
+.kicker { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: #7FC8F5; }
+.bento { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 16px; }
+.s3 { grid-column: span 3; } .s2 { grid-column: span 2; }
+.card { position: relative; border-radius: 20px; padding: 32px; background: linear-gradient(180deg, #111319, #0C0E13); box-shadow: 0 0 0 1px rgba(255,255,255,.07) inset; overflow: hidden; transition: transform .6s cubic-bezier(.22,1,.36,1), box-shadow .6s; text-decoration: none; color: #ECEEF3; display: flex; flex-direction: column; gap: 14px; min-height: 260px; box-sizing: border-box; }
+.card::before { content: ''; position: absolute; inset: 0; border-radius: 20px; padding: 1px; background: conic-gradient(from var(--a, 0deg), transparent 0deg, rgba(76,201,240,.9) 60deg, rgba(160,107,255,.9) 120deg, transparent 180deg, transparent 360deg); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; opacity: 0; transition: opacity .5s; animation: spin 6s linear infinite; }
+.card::after { content: ''; position: absolute; width: 420px; height: 420px; right: -160px; top: -200px; border-radius: 50%; background: radial-gradient(circle, rgba(110,150,255,.16), transparent 65%); opacity: .35; transition: opacity .6s, transform .8s cubic-bezier(.22,1,.36,1); pointer-events: none; }
+.card:hover { transform: translateY(-6px); color: #ECEEF3; }
+.card:hover::before { opacity: 1; }
+.card:hover::after { opacity: 1; transform: translate(-40px, 40px); }
+.card .more { margin-top: auto; font-size: 14px; color: #8FD3FF; display: inline-flex; gap: 8px; align-items: center; }
+.card .more .ar { transition: transform .5s cubic-bezier(.22,1,.36,1); }
+.card:hover .more .ar { transform: translateX(6px); }
+.chip { font-size: 12px; color: #B9C0CF; padding: 6px 10px; border-radius: 8px; background: rgba(255,255,255,.04); box-shadow: 0 0 0 1px rgba(255,255,255,.07) inset; }
+.num { font-size: 12px; color: #7D8496; }
+.tl-bar { height: 2px; background: linear-gradient(90deg, #4CC9F0, #A06BFF); transform-origin: left; }
+.pipe-pulse { position: absolute; top: 50%; width: 120px; height: 2px; margin-top: -1px; background: linear-gradient(90deg, transparent, #6FD6FF, #FFFFFF); filter: drop-shadow(0 0 8px #6FD6FF); animation: pipe 3.2s cubic-bezier(.45,0,.2,1) infinite; }
+.spark { stroke-dasharray: 400; stroke-dashoffset: 400; animation: draw 2.4s cubic-bezier(.22,1,.36,1) forwards; }
+.step { all: unset; box-sizing: border-box; cursor: pointer; display: flex; flex-direction: column; gap: 8px; padding: 22px; border-radius: 16px; min-height: 120px; transition: background .4s, box-shadow .4s, transform .4s cubic-bezier(.22,1,.36,1); }
+.step:hover { transform: translateY(-3px); }
+.step:focus-visible { outline: 2px solid #6FD6FF; outline-offset: 3px; }
+.step-off { background: rgba(255,255,255,.02); box-shadow: 0 0 0 1px rgba(255,255,255,.07) inset; color: #A7AEBF; }
+.step-on { background: linear-gradient(180deg, rgba(76,201,240,.12), rgba(123,92,255,.08)); box-shadow: 0 0 0 1px rgba(111,214,255,.55) inset, 0 0 40px -10px rgba(111,214,255,.45); color: #FFFFFF; }
+.detail { animation: up .6s cubic-bezier(.22,1,.36,1) both; }
+.reason { padding: 28px 0; border-top: 1px solid rgba(255,255,255,.08); display: grid; grid-template-columns: 64px minmax(0,1fr); gap: 16px; }
+.field { display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: #A7AEBF; }
+.inp { font: inherit; font-size: 15px; color: #ECEEF3; background: rgba(255,255,255,.03); border: 0; box-shadow: 0 0 0 1px rgba(255,255,255,.10) inset; border-radius: 12px; padding: 14px 16px; min-height: 48px; box-sizing: border-box; transition: box-shadow .3s; }
+.inp:focus { outline: none; box-shadow: 0 0 0 1px #6FD6FF inset, 0 0 0 4px rgba(111,214,255,.15); }
+.ind { padding: 24px; border-radius: 16px; box-shadow: 0 0 0 1px rgba(255,255,255,.07) inset; background: rgba(255,255,255,.015); transition: box-shadow .4s, background .4s; }
+.ind:hover { box-shadow: 0 0 0 1px rgba(160,107,255,.5) inset; background: rgba(160,107,255,.05); }
+.rv { }
+@supports (animation-timeline: view()) {
+  .rv { animation: reveal linear both; animation-timeline: view(); animation-range: entry 0% cover 28%; }
+  .rv-line { animation: lineGrow linear both; animation-timeline: view(); animation-range: entry 10% cover 45%; }
+}
+@keyframes reveal { from { opacity: 0; transform: translateY(40px); filter: blur(8px); } to { opacity: 1; transform: none; filter: none; } }
+@keyframes lineGrow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes wordIn { from { opacity: 0; transform: translateY(.5em); filter: blur(10px); } to { opacity: 1; transform: none; filter: none; } }
+@keyframes up { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+@keyframes termIn { from { opacity: 0; transform: translateX(-8px); } to { opacity: 1; transform: none; } }
+@keyframes blink { 0% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes flow { to { stroke-dashoffset: -120; } }
+@keyframes comet { from { stroke-dashoffset: 960; } to { stroke-dashoffset: 0; } }
+@keyframes nodePulse { 0%, 100% { opacity: .55; transform: scale(1); } 50% { opacity: 1; transform: scale(1.25); } }
+@keyframes pulse { 0%, 100% { opacity: .5; } 50% { opacity: 1; } }
+@keyframes gridIn { from { opacity: 0; transform: scale(1.06); } to { opacity: 1; transform: none; } }
+@keyframes drift { from { transform: translate(-30%, 0); } to { transform: translate(-20%, 60px); } }
+@keyframes pipe { from { left: -120px; opacity: 0; } 15% { opacity: 1; } 85% { opacity: 1; } to { left: 100%; opacity: 0; } }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+@property --a { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
+@keyframes spin { to { --a: 360deg; } }
+@media (max-width: 900px) {
+  .bento { grid-template-columns: minmax(0, 1fr); }
+  .s3, .s2 { grid-column: auto; }
+  .nav-links { display: none !important; }
+  .hero-row { flex-direction: column; align-items: stretch !important; }
+  .hero-vis { flex: 0 0 auto !important; height: 520px !important; }
+  .sec { padding-top: 96px; }
+}
+@media (max-width: 600px) {
+  .nav-cta { display: none !important; }
+  .frm { grid-template-columns: minmax(0, 1fr) !important; }
+  .pipe { grid-template-columns: minmax(0, 1fr) !important; }
+  .pipe-line { display: none; }
+  .h2 { font-size: 30px !important; }
+  .h1 { font-size: 32px !important; }
+  .hero-vis { height: 430px !important; }
+  .hero-vis svg { height: 260px !important; }
+  .term { font-size: 10.5px !important; padding: 14px 16px !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .term-line { opacity: 1; }
+  .spark { stroke-dashoffset: 0; }
+}
+</style>
+
+<style>
+.io .rv { opacity: 0; transform: translateY(40px); filter: blur(8px); transition: opacity .9s cubic-bezier(.22,1,.36,1), transform .9s cubic-bezier(.22,1,.36,1), filter .9s; }
+.io .rv.in { opacity: 1; transform: none; filter: none; }
+.io .rv-line { transform: scaleX(0); transition: transform 1.4s cubic-bezier(.22,1,.36,1); }
+.io .rv-line.in { transform: scaleX(1); }
+</style>
+</head>
+<body>
+
+<div class="mt" style="width: 100%; min-height: 100vh; position: relative;">
+
+<header class="nav" style="position: sticky; top: 0; z-index: 20; background: rgba(7,8,11,.72); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255,255,255,.06);">
+<div class="wrap" style="display: flex; align-items: center; gap: 32px; height: 72px;">
+<a href="#top" aria-label="Matura — на главную" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #FFFFFF;">
+<svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6FD6FF"></stop><stop offset="1" stop-color="#A06BFF"></stop></linearGradient></defs><circle cx="14" cy="14" r="12" fill="none" stroke="url(#lg)" stroke-width="2"></circle><circle cx="14" cy="14" r="6.5" fill="none" stroke="url(#lg)" stroke-width="2" stroke-dasharray="28 13"></circle><circle cx="14" cy="14" r="2" fill="#FFFFFF"></circle></svg>
+<span class="hd" style="font-size: 20px; font-weight: 600;">matura</span>
+</a>
+<nav class="nav-links" aria-label="Основная навигация" style="display: flex; gap: 24px; flex-grow: 1;">
+<a class="nl" href="#practices">Практики</a>
+<a class="nl" href="#case">Кейсы</a>
+<a class="nl" href="#delivery">Качество</a>
+<a class="nl" href="#formats">Как мы работаем</a>
+<a class="nl" href="#why">О компании</a>
+</nav>
+<div style="display: flex; align-items: center; gap: 16px; margin-left: auto;">
+<div class="mono" style="display: flex; gap: 2px; padding: 3px; border-radius: 999px; box-shadow: 0 0 0 1px rgba(255,255,255,.1) inset; font-size: 12px;">
+<a href="#top" aria-current="true" style="padding: 8px 10px; border-radius: 999px; background: rgba(255,255,255,.08); color: #FFFFFF; text-decoration: none;">RU</a>
+<a href="#top" style="padding: 8px 10px; border-radius: 999px; color: #8B92A3; text-decoration: none;">EN</a>
+</div>
+<a class="btn btn-p nav-cta" href="#contact" style="min-height: 40px; padding: 0 18px; font-size: 14px;">Заказать диагностику</a>
+</div>
+</div>
+</header>
+
+<section id="top" style="position: relative; padding: 120px 0 80px; overflow: hidden;">
+<div class="hero-grid" aria-hidden="true"></div>
+<div class="glow-a" aria-hidden="true"></div>
+<div class="glow-b" aria-hidden="true"></div>
+<div class="wrap hero-row" style="position: relative; display: flex; gap: 48px; align-items: center;">
+<div style="flex: 1.25 1 600px; min-width: 0; display: flex; flex-direction: column; gap: 28px;">
+<span class="eyebrow mono fade1" style="align-self: flex-start;"><span class="dot"></span>ИТ-консалтинг для банков · Россия · СНГ · Азия</span>
+<h1 class="h1 hd"><span class="word">Доводим</span> <span class="word w2">ИТ‑трансформацию</span> <span class="word w3">банков</span> <span class="word w4 grad">до результата</span></h1>
+<p class="lead fade2" style="max-width: 560px;">Стратегия, смена платформ и выход на новые рынки — от решения правления до запуска. Одна команда из 35+ экспертов, которые строили ИТ крупнейших банков.</p>
+<div class="fade3" style="display: flex; flex-wrap: wrap; gap: 12px;">
+<a class="btn btn-p" href="#contact">Заказать диагностику <span class="ar" aria-hidden="true">→</span></a>
+<a class="btn btn-g" href="#case">Кейс: филиал банка в Китае</a>
+</div>
+<p class="mono fade3" style="margin: 8px 0 0; font-size: 12px; line-height: 1.7; color: #7D8496;">Опыт команды: банки топ-10 РФ · федеральные операторы связи · государственные цифровые платформы</p>
+</div>
+
+<div class="hero-vis" style="flex: 1 1 440px; min-width: 0; position: relative; height: 540px;" aria-hidden="true">
+<svg viewBox="0 40 560 400" style="position: absolute; left: 0; top: 0; width: 100%; height: 370px;">
+<defs>
+<linearGradient id="cg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4CC9F0" stop-opacity="0"></stop><stop offset=".7" stop-color="#6FD6FF"></stop><stop offset="1" stop-color="#FFFFFF"></stop></linearGradient>
+<radialGradient id="ng"><stop offset="0" stop-color="#FFFFFF"></stop><stop offset=".4" stop-color="#6FD6FF"></stop><stop offset="1" stop-color="#6FD6FF" stop-opacity="0"></stop></radialGradient>
+<radialGradient id="ng2"><stop offset="0" stop-color="#FFFFFF"></stop><stop offset=".4" stop-color="#A06BFF"></stop><stop offset="1" stop-color="#A06BFF" stop-opacity="0"></stop></radialGradient>
+</defs>
+<circle cx="300" cy="230" r="200" fill="none" stroke="rgba(255,255,255,.05)"></circle>
+<circle cx="300" cy="230" r="140" fill="none" stroke="rgba(255,255,255,.06)" stroke-dasharray="2 6"></circle>
+<circle cx="300" cy="230" r="80" fill="none" stroke="rgba(111,214,255,.18)"></circle>
+<path class="trace" d="M60 120 C 160 120, 200 230, 300 230" fill="none" stroke="rgba(111,214,255,.45)" stroke-width="1.2"></path>
+<path class="trace" d="M60 340 C 160 340, 200 230, 300 230" fill="none" stroke="rgba(160,107,255,.45)" stroke-width="1.2"></path>
+<path class="trace" d="M300 230 C 400 230, 420 90, 520 90" fill="none" stroke="rgba(111,214,255,.45)" stroke-width="1.2"></path>
+<path class="trace" d="M300 230 C 400 230, 430 370, 520 370" fill="none" stroke="rgba(160,107,255,.45)" stroke-width="1.2"></path>
+<path class="trace" d="M300 230 L 300 470" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="1"></path>
+<path class="comet" d="M60 120 C 160 120, 200 230, 300 230 C 400 230, 420 90, 520 90" fill="none" stroke="url(#cg)" stroke-width="2.2" stroke-linecap="round"></path>
+<path class="comet c2" d="M60 340 C 160 340, 200 230, 300 230 C 400 230, 430 370, 520 370" fill="none" stroke="url(#cg)" stroke-width="2.2" stroke-linecap="round"></path>
+<path class="comet c3" d="M60 120 C 160 120, 200 230, 300 230 C 400 230, 430 370, 520 370" fill="none" stroke="url(#cg)" stroke-width="1.6" stroke-linecap="round"></path>
+<circle class="node" cx="60" cy="120" r="10" fill="url(#ng)"></circle>
+<circle class="node n2" cx="60" cy="340" r="10" fill="url(#ng2)"></circle>
+<circle class="node n3" cx="520" cy="90" r="10" fill="url(#ng)"></circle>
+<circle class="node n4" cx="520" cy="370" r="10" fill="url(#ng2)"></circle>
+<circle cx="300" cy="230" r="34" fill="rgba(14,16,22,.9)" stroke="url(#cg)" stroke-width="1.5"></circle>
+<circle class="node" cx="300" cy="230" r="14" fill="url(#ng)"></circle>
+<text x="60" y="98" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#8B92A3">АБС</text>
+<text x="60" y="372" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#8B92A3">СБП · API</text>
+<text x="520" y="68" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#8B92A3">CI/CD</text>
+<text x="520" y="402" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#8B92A3">QA gate</text>
+<text x="300" y="186" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#CFE9FF">core</text>
+</svg>
+<div class="glass mono term" style="position: absolute; left: 0; bottom: 0; overflow: hidden; width: min(100%, 420px); padding: 18px 20px; font-size: 12.5px; line-height: 1.9; color: #B9C0CF;">
+<div style="display: flex; gap: 6px; margin-bottom: 10px;"><span style="width: 10px; height: 10px; border-radius: 50%; background: #2A2E3A;"></span><span style="width: 10px; height: 10px; border-radius: 50%; background: #2A2E3A;"></span><span style="width: 10px; height: 10px; border-radius: 50%; background: #2A2E3A;"></span><span style="margin-left: auto; font-size: 11px; color: #7D8496;">release-pipeline.ts</span></div>
+<div class="term-line t1"><span style="color: #7D8496;">$</span> npx playwright test --project=core-banking</div>
+<div class="term-line t2"><span style="color: #5EE6A8;">✓</span> payments/sbp-transfer.spec.ts</div>
+<div class="term-line t3"><span style="color: #5EE6A8;">✓</span> accounts/open-account.spec.ts</div>
+<div class="term-line t4"><span style="color: #5EE6A8;">✓</span> reports/regulatory-export.spec.ts</div>
+<div class="term-line t5"><span style="color: #8FD3FF;">→</span> quality gate: <span style="color: #FFFFFF;">passed</span> · release ready <span class="caret"></span></div>
+</div>
+</div>
+</div>
+</section>
+
+<section aria-label="Цифры" class="wrap" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0 32px;">
+<div class="stat rv"><div class="hd" style="font-size: 44px; font-weight: 600;">35+</div><div style="color: #9AA1B2; font-size: 14px; margin-top: 6px;">экспертов в штате</div></div>
+<div class="stat rv"><div class="hd" style="font-size: 44px; font-weight: 600;">~18 лет</div><div style="color: #9AA1B2; font-size: 14px; margin-top: 6px;">средний опыт эксперта</div></div>
+<div class="stat rv"><div class="hd" style="font-size: 44px; font-weight: 600;">24×7</div><div style="color: #9AA1B2; font-size: 14px; margin-top: 6px;">сопровождение критичных систем</div></div>
+<div class="stat rv"><div class="hd" style="font-size: 44px; font-weight: 600;">3 страны</div><div style="color: #9AA1B2; font-size: 14px; margin-top: 6px;">проектов: Россия, Китай, Казахстан</div></div>
+</section>
+
+<section id="practices" class="sec">
+<div class="wrap">
+<div class="rv" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 48px;">
+<div style="display: flex; flex-direction: column; gap: 16px; max-width: 680px;">
+<span class="kicker mono">Практики</span>
+<h2 class="h2 hd">Шесть практик. Одна ответственность за результат.</h2>
+</div>
+<p class="lead" style="max-width: 400px; font-size: 16px;">Не отдаём отчёт и уходим. Сами внедряем то, что рекомендуем, — и отвечаем за запуск.</p>
+</div>
+<div class="bento">
+<a class="card s3 rv" href="#contact">
+<span class="num mono">01</span>
+<h3 class="hd" style="margin: 0; font-size: 26px; font-weight: 600;">Стратегия и трансформация</h3>
+<p style="margin: 0; color: #A7AEBF; line-height: 1.55;">Куда инвестировать в ИТ и как защитить программу на правлении. Дорожная карта, P&amp;L и бизнес-кейс, который проходит комитет.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px;"><span class="chip">ИТ-стратегия</span><span class="chip">Финмодель</span><span class="chip">Анализ процессов</span><span class="chip">Регуляторика</span></div>
+<span class="more">Подробнее <span class="ar" aria-hidden="true">→</span></span>
+</a>
+<a class="card s3 rv" href="#case">
+<span class="num mono">02</span>
+<h3 class="hd" style="margin: 0; font-size: 26px; font-weight: 600;">Международная экспансия</h3>
+<p style="margin: 0; color: #A7AEBF; line-height: 1.55;">Филиал или дочерний банк за рубежом: инфраструктура, АБС, отчётность для двух юрисдикций и проверки местного регулятора.</p>
+<svg viewBox="0 0 400 70" style="width: 100%; height: 70px;" aria-hidden="true"><path class="trace" d="M20 50 Q 200 -10 380 40" fill="none" stroke="rgba(111,214,255,.6)" stroke-width="1.2"></path><path class="comet" d="M20 50 Q 200 -10 380 40" fill="none" stroke="url(#cg)" stroke-width="2" stroke-linecap="round"></path><circle cx="20" cy="50" r="4" fill="#6FD6FF"></circle><circle cx="380" cy="40" r="4" fill="#A06BFF"></circle><text x="20" y="68" font-family="JetBrains Mono, monospace" font-size="10" fill="#8B92A3">RU</text><text x="364" y="62" font-family="JetBrains Mono, monospace" font-size="10" fill="#8B92A3">ASIA</text></svg>
+<span class="more">Смотреть кейс <span class="ar" aria-hidden="true">→</span></span>
+</a>
+<a class="card s2 rv" href="#contact">
+<span class="num mono">03</span>
+<h3 class="hd" style="margin: 0; font-size: 22px; font-weight: 600;">Банковские платформы</h3>
+<p style="margin: 0; color: #A7AEBF; line-height: 1.55;">Смена АБС без остановки операционного дня. ЦФТ, СБП, цифровой рубль, ДБО.</p>
+<span class="more">Подробнее <span class="ar" aria-hidden="true">→</span></span>
+</a>
+<a class="card s2 rv" href="#contact">
+<span class="num mono">04</span>
+<h3 class="hd" style="margin: 0; font-size: 22px; font-weight: 600;">Архитектура и импортонезависимость</h3>
+<p style="margin: 0; color: #A7AEBF; line-height: 1.55;">Платформы, которые выдерживают нагрузку, проверку ИБ и уход вендора.</p>
+<span class="more">Подробнее <span class="ar" aria-hidden="true">→</span></span>
+</a>
+<a class="card s2 rv" href="#delivery">
+<span class="num mono">05</span>
+<h3 class="hd" style="margin: 0; font-size: 22px; font-weight: 600;">Эффективность ИТ-поставки</h3>
+<p style="margin: 0; color: #A7AEBF; line-height: 1.55;">SDLC, качество на метриках, РБПО и автоматизация — релизы в срок и без инцидентов.</p>
+<span class="more">Подробнее <span class="ar" aria-hidden="true">→</span></span>
+</a>
+<a class="card s3 rv" href="#contact" style="min-height: 200px;">
+<span class="num mono">06</span>
+<h3 class="hd" style="margin: 0; font-size: 22px; font-weight: 600;">Искусственный интеллект</h3>
+<p style="margin: 0; color: #A7AEBF; line-height: 1.55;">Измеримый эффект от ИИ, а не ещё один пилот в стол: оценка готовности, внедрение в процессы, агенты в продуктах.</p>
+<span class="more">Подробнее <span class="ar" aria-hidden="true">→</span></span>
+</a>
+<a class="card s3 rv" href="#formats" style="min-height: 200px; background: linear-gradient(135deg, rgba(76,201,240,.10), rgba(123,92,255,.10)), #0C0E13;">
+<span class="num mono">START</span>
+<h3 class="hd" style="margin: 0; font-size: 22px; font-weight: 600;">Не знаете, с чего начать?</h3>
+<p style="margin: 0; color: #B9C0CF; line-height: 1.55;">Диагностика за 2–4 недели с фиксированной стоимостью: что сейчас, где потери, какие 5–10 решений дадут эффект.</p>
+<span class="more">Как мы работаем <span class="ar" aria-hidden="true">→</span></span>
+</a>
+</div>
+</div>
+</section>
+
+<section id="case" class="sec">
+<div class="wrap">
+<div class="glass rv" style="position: relative; padding: clamp(28px, 5vw, 64px); overflow: hidden;">
+<div aria-hidden="true" style="position: absolute; inset: 0; background: radial-gradient(ellipse 60% 80% at 100% 0%, rgba(123,92,255,.16), transparent 60%), radial-gradient(ellipse 50% 70% at 0% 100%, rgba(76,201,240,.12), transparent 60%);"></div>
+<div style="position: relative; display: flex; flex-direction: column; gap: 40px;">
+<div style="display: flex; flex-direction: column; gap: 16px; max-width: 820px;">
+<span class="kicker mono">Опыт команды · международная экспансия</span>
+<h2 class="h2 hd">Филиал российского банка в Китае — от пустого офиса до готовности к лицензии</h2>
+<p class="lead" style="font-size: 17px;">Команда с нуля построила ИТ-ландшафт филиала, развернула АБС и подготовила банк к проверкам регуляторов.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+<div style="padding: 24px; border-radius: 16px; background: rgba(255,255,255,.03); box-shadow: 0 0 0 1px rgba(255,255,255,.07) inset;"><div class="hd grad" style="font-size: 40px; font-weight: 600;">100%</div><div style="color: #A7AEBF; font-size: 14px; margin-top: 6px;">готовность к получению лицензии</div></div>
+<div style="padding: 24px; border-radius: 16px; background: rgba(255,255,255,.03); box-shadow: 0 0 0 1px rgba(255,255,255,.07) inset;"><div class="hd grad" style="font-size: 40px; font-weight: 600;">2 ЦОДа</div><div style="color: #A7AEBF; font-size: 14px; margin-top: 6px;">автономная геораспределённая инфраструктура</div></div>
+<div style="padding: 24px; border-radius: 16px; background: rgba(255,255,255,.03); box-shadow: 0 0 0 1px rgba(255,255,255,.07) inset;"><div class="hd grad" style="font-size: 40px; font-weight: 600;">2</div><div style="color: #A7AEBF; font-size: 14px; margin-top: 6px;">юрисдикции: регуляторная отчётность настроена и протестирована</div></div>
+<div style="padding: 24px; border-radius: 16px; background: rgba(255,255,255,.03); box-shadow: 0 0 0 1px rgba(255,255,255,.07) inset;"><div class="hd grad" style="font-size: 40px; font-weight: 600;">16</div><div style="color: #A7AEBF; font-size: 14px; margin-top: 6px;">сотрудников филиала обучены и работают</div></div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 18px;">
+<div class="tl-bar rv-line"></div>
+<div class="mono" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px; font-size: 12px; color: #9AA1B2;">
+<span>01 · Инфраструктура и ЦОДы</span><span>02 · АБС и процессы</span><span>03 · Отчётность</span><span>04 · Команда филиала</span><span style="color: #FFFFFF;">05 · Пройдены проверки регуляторов</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="delivery" class="sec">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 48px;">
+<div class="rv" style="display: flex; flex-direction: column; gap: 16px; max-width: 760px;">
+<span class="kicker mono">Эффективность ИТ-поставки</span>
+<h2 class="h2 hd">ИТ, которое выпускает в срок — и показывает это в цифрах</h2>
+<p class="lead" style="font-size: 17px;">Выстраиваем SDLC, автотесты и контрольные точки качества так, чтобы правление видело предсказуемость, а не обещания.</p>
+</div>
+<div class="glass rv" style="padding: 32px; display: flex; flex-direction: column; gap: 28px;">
+<div class="pipe" style="position: relative; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; align-items: center;">
+<div class="pipe-line" aria-hidden="true" style="position: absolute; left: 4%; right: 4%; top: 50%; height: 1px; background: rgba(255,255,255,.12); overflow: hidden;"><div class="pipe-pulse"></div></div>
+<div class="mono" style="position: relative; text-align: center; padding: 14px 8px; border-radius: 12px; background: #0E1016; box-shadow: 0 0 0 1px rgba(255,255,255,.1) inset; font-size: 12px;">commit</div>
+<div class="mono" style="position: relative; text-align: center; padding: 14px 8px; border-radius: 12px; background: #0E1016; box-shadow: 0 0 0 1px rgba(255,255,255,.1) inset; font-size: 12px;">build</div>
+<div class="mono" style="position: relative; text-align: center; padding: 14px 8px; border-radius: 12px; background: #0E1016; box-shadow: 0 0 0 1px rgba(111,214,255,.5) inset; font-size: 12px; color: #CFE9FF;">playwright</div>
+<div class="mono" style="position: relative; text-align: center; padding: 14px 8px; border-radius: 12px; background: #0E1016; box-shadow: 0 0 0 1px rgba(160,107,255,.5) inset; font-size: 12px; color: #E3D6FF;">quality gate</div>
+<div class="mono" style="position: relative; text-align: center; padding: 14px 8px; border-radius: 12px; background: #0E1016; box-shadow: 0 0 0 1px rgba(255,255,255,.1) inset; font-size: 12px;">release</div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px;">
+<div style="padding: 20px; border-radius: 14px; background: rgba(255,255,255,.02); box-shadow: 0 0 0 1px rgba(255,255,255,.07) inset; display: flex; flex-direction: column; gap: 12px;"><span style="font-size: 14px; color: #ECEEF3;">Утечка дефектов в прод</span><svg viewBox="0 0 200 48" style="width: 100%; height: 48px;" aria-hidden="true"><path class="spark" d="M0 10 L30 14 L60 12 L90 22 L120 28 L150 34 L180 38 L200 40" fill="none" stroke="#6FD6FF" stroke-width="2"></path></svg><span class="mono" style="font-size: 11px; color: #7D8496;">цель: вниз</span></div>
+<div style="padding: 20px; border-radius: 14px; background: rgba(255,255,255,.02); box-shadow: 0 0 0 1px rgba(255,255,255,.07) inset; display: flex; flex-direction: column; gap: 12px;"><span style="font-size: 14px; color: #ECEEF3;">Покрытие требований тестами</span><svg viewBox="0 0 200 48" style="width: 100%; height: 48px;" aria-hidden="true"><path class="spark" d="M0 40 L30 36 L60 34 L90 26 L120 22 L150 14 L180 12 L200 8" fill="none" stroke="#A06BFF" stroke-width="2"></path></svg><span class="mono" style="font-size: 11px; color: #7D8496;">цель: вверх</span></div>
+<div style="padding: 20px; border-radius: 14px; background: rgba(255,255,255,.02); box-shadow: 0 0 0 1px rgba(255,255,255,.07) inset; display: flex; flex-direction: column; gap: 12px;"><span style="font-size: 14px; color: #ECEEF3;">Стабильность автотестов</span><svg viewBox="0 0 200 48" style="width: 100%; height: 48px;" aria-hidden="true"><path class="spark" d="M0 34 L30 28 L60 30 L90 20 L120 18 L150 12 L180 12 L200 10" fill="none" stroke="#6FD6FF" stroke-width="2"></path></svg><span class="mono" style="font-size: 11px; color: #7D8496;">цель: вверх</span></div>
+<div style="padding: 20px; border-radius: 14px; background: rgba(255,255,255,.02); box-shadow: 0 0 0 1px rgba(255,255,255,.07) inset; display: flex; flex-direction: column; gap: 12px;"><span style="font-size: 14px; color: #ECEEF3;">Время исправления дефектов</span><svg viewBox="0 0 200 48" style="width: 100%; height: 48px;" aria-hidden="true"><path class="spark" d="M0 8 L30 12 L60 18 L90 16 L120 26 L150 30 L180 36 L200 38" fill="none" stroke="#A06BFF" stroke-width="2"></path></svg><span class="mono" style="font-size: 11px; color: #7D8496;">цель: вниз</span></div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="formats" class="sec">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 40px;">
+<div class="rv" style="display: flex; flex-direction: column; gap: 16px; max-width: 760px;">
+<span class="kicker mono">Как мы работаем</span>
+<h2 class="h2 hd">Начните с диагностики. Масштабируйте, когда увидите эффект.</h2>
+</div>
+<div class="rv" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px;">
+<button type="button" class="step step-on" data-i="0" aria-pressed="true"><span class="mono" style="font-size: 12px; color: #7FC8F5;">01 · 2–4 недели</span><span class="hd" style="font-size: 20px; font-weight: 600;">Экспресс-диагностика</span></button>
+<button type="button" class="step step-off" data-i="1" aria-pressed="false"><span class="mono" style="font-size: 12px; color: #7FC8F5;">02 · 6–12 недель</span><span class="hd" style="font-size: 20px; font-weight: 600;">Пилот</span></button>
+<button type="button" class="step step-off" data-i="2" aria-pressed="false"><span class="mono" style="font-size: 12px; color: #7FC8F5;">03 · 3–12 месяцев</span><span class="hd" style="font-size: 20px; font-weight: 600;">Проект под ключ</span></button>
+<button type="button" class="step step-off" data-i="3" aria-pressed="false"><span class="mono" style="font-size: 12px; color: #7FC8F5;">04 · от 6 месяцев</span><span class="hd" style="font-size: 20px; font-weight: 600;">Выделенная команда</span></button>
+</div>
+<div class="glass detail" style="padding: 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 32px; align-items: start;">
+<div style="display: flex; flex-direction: column; gap: 10px;"><span class="mono" style="font-size: 12px; color: #7D8496;">ЧТО ВЫ ПОЛУЧАЕТЕ</span><span style="font-size: 17px; line-height: 1.55;"><span id="f-get">Отчёт «как сейчас», 5–10 приоритетных решений с оценкой эффекта и дорожная карта.</span></span></div>
+<div style="display: flex; flex-direction: column; gap: 10px;"><span class="mono" style="font-size: 12px; color: #7D8496;">СРОК И МОДЕЛЬ ОПЛАТЫ</span><span style="font-size: 17px; line-height: 1.55;"><span id="f-term">2–4 недели · фиксированная стоимость</span></span></div>
+<div style="display: flex; flex-direction: column; gap: 14px; align-items: flex-start;"><span class="mono" style="font-size: 12px; color: #7D8496;">СЛЕДУЮЩИЙ ШАГ</span><a class="btn btn-p" href="#contact"><span id="f-cta">Заказать диагностику</span> <span class="ar" aria-hidden="true">→</span></a></div>
+</div>
+</div>
+</section>
+
+<section id="why" class="sec">
+<div class="wrap" style="display: flex; flex-wrap: wrap; gap: 48px;">
+<div class="rv" style="flex: 1 1 320px; display: flex; flex-direction: column; gap: 16px;">
+<span class="kicker mono">Почему Matura</span>
+<h2 class="h2 hd">Зрелость — это когда результат предсказуем</h2>
+</div>
+<div style="flex: 2 1 560px; min-width: 0;">
+<div class="reason rv"><span class="mono" style="color: #7FC8F5;">01</span><div><div class="hd" style="font-size: 20px; font-weight: 600;">От стратегии до запуска</div><p style="margin: 8px 0 0; color: #A7AEBF; line-height: 1.55;">Аудит, P&amp;L, защита на правлении, реализация и сопровождение — без передачи между подрядчиками.</p></div></div>
+<div class="reason rv"><span class="mono" style="color: #7FC8F5;">02</span><div><div class="hd" style="font-size: 20px; font-weight: 600;">Опыт крупнейших ИТ-ландшафтов</div><p style="margin: 8px 0 0; color: #A7AEBF; line-height: 1.55;">Эксперты строили платформы в банках топ-10, у федеральных операторов и на государственных цифровых платформах.</p></div></div>
+<div class="reason rv"><span class="mono" style="color: #7FC8F5;">03</span><div><div class="hd" style="font-size: 20px; font-weight: 600;">Регуляторика с первого дня</div><p style="margin: 8px 0 0; color: #A7AEBF; line-height: 1.55;">Требования ЦБ, ЗОКИИ, ФСТЭК и ФСБ заложены в архитектуру, а не догоняют проект на финише.</p></div></div>
+<div class="reason rv"><span class="mono" style="color: #7FC8F5;">04</span><div><div class="hd" style="font-size: 20px; font-weight: 600;">Встраиваемся в ваш контур</div><p style="margin: 8px 0 0; color: #A7AEBF; line-height: 1.55;">Работаем по вашим процедурам ИБ, закупок и отчётности; административные вопросы берём на себя.</p></div></div>
+<div class="reason rv"><span class="mono" style="color: #7FC8F5;">05</span><div><div class="hd" style="font-size: 20px; font-weight: 600;">Результат в метриках</div><p style="margin: 8px 0 0; color: #A7AEBF; line-height: 1.55;">Каждый проект начинается с замера «как сейчас» и заканчивается отчётом «что изменилось».</p></div></div>
+</div>
+</div>
+</section>
+
+<section class="sec" aria-label="Отрасли">
+<div class="wrap" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px;">
+<div class="ind rv"><div class="hd" style="font-size: 18px; font-weight: 600;">Банки и финтех</div><p style="margin: 8px 0 0; color: #9AA1B2; font-size: 14px; line-height: 1.5;">АБС, платежи, ДБО, филиалы за рубежом</p></div>
+<div class="ind rv"><div class="hd" style="font-size: 18px; font-weight: 600;">Телеком</div><p style="margin: 8px 0 0; color: #9AA1B2; font-size: 14px; line-height: 1.5;">Финсервисы операторов, экосистемные платформы</p></div>
+<div class="ind rv"><div class="hd" style="font-size: 18px; font-weight: 600;">Госсектор и КИИ</div><p style="margin: 8px 0 0; color: #9AA1B2; font-size: 14px; line-height: 1.5;">Гос­платформы, импортозамещение, РБПО</p></div>
+<div class="ind rv"><div class="hd" style="font-size: 18px; font-weight: 600;">Крупный бизнес</div><p style="margin: 8px 0 0; color: #9AA1B2; font-size: 14px; line-height: 1.5;">Процессы, SDLC, качество, ИИ в работе</p></div>
+</div>
+</section>
+
+<section id="contact" class="sec" style="padding-bottom: 120px;">
+<div class="wrap">
+<div class="glass rv" style="position: relative; overflow: hidden; padding: clamp(28px, 5vw, 64px); display: flex; flex-wrap: wrap; gap: 48px;">
+<div aria-hidden="true" style="position: absolute; inset: 0; background: radial-gradient(ellipse 50% 70% at 0% 0%, rgba(76,201,240,.14), transparent 60%);"></div>
+<div style="position: relative; flex: 1 1 320px; display: flex; flex-direction: column; gap: 18px;">
+<span class="kicker mono">Контакт</span>
+<h2 class="h2 hd" style="font-size: clamp(30px, 3.4vw, 44px);">Расскажите о задаче — предложим формат и первый шаг</h2>
+<p class="lead" style="font-size: 16px;">Начнём с короткой встречи. Если нужно, подпишем NDA до обсуждения деталей.</p>
+</div>
+<form class="frm" style="position: relative; flex: 1 1 420px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px;">
+<label class="field">Имя<input class="inp" type="text" name="name" autocomplete="name"></label>
+<label class="field">Компания и должность<input class="inp" type="text" name="company" autocomplete="organization"></label>
+<label class="field">Email или телефон<input class="inp" type="text" name="contact" autocomplete="email"></label>
+<label class="field">Направление<select class="inp" name="practice"><option>Стратегия и трансформация</option><option>Международная экспансия</option><option>Банковские платформы</option><option>Архитектура и импортонезависимость</option><option>Эффективность ИТ-поставки</option><option>Искусственный интеллект</option></select></label>
+<label class="field" style="grid-column: 1 / -1;">Задача<textarea class="inp" name="task" rows="3" style="resize: vertical;"></textarea></label>
+<label style="grid-column: 1 / -1; display: flex; gap: 10px; align-items: flex-start; font-size: 13px; color: #9AA1B2; line-height: 1.5;"><input type="checkbox" name="consent" style="margin-top: 3px; width: 18px; height: 18px; accent-color: #6FD6FF; flex-shrink: 0;"><span>Согласен на обработку персональных данных в соответствии с <a href="#top">политикой конфиденциальности</a></span></label>
+<div style="grid-column: 1 / -1;"><button type="button" class="btn btn-p" style="border: 0; cursor: pointer; font-family: inherit;">Отправить запрос <span class="ar" aria-hidden="true">→</span></button></div>
+</form>
+</div>
+</div>
+</section>
+
+<footer style="border-top: 1px solid rgba(255,255,255,.06);">
+<div class="wrap" style="display: flex; flex-wrap: wrap; gap: 24px; justify-content: space-between; align-items: center; padding-top: 32px; padding-bottom: 32px; font-size: 13px; color: #8B92A3;">
+<span><span class="hd" style="color: #FFFFFF; font-weight: 600;">matura</span> · ИТ-консалтинг на стыке бизнеса, ИТ и регуляторики</span>
+<span class="mono">© 2026 [Юрлицо] · ИНН [—] · <a href="#top">Политика ПДн</a></span>
+</div>
+</footer>
+
+</div>
+
+<script>
+(function () {
+  var data = [
+    ['Отчёт «как сейчас», 5–10 приоритетных решений с оценкой эффекта и дорожная карта.', '2–4 недели · фиксированная стоимость', 'Заказать диагностику'],
+    ['Одно решение внедрено на одной команде или процессе, замер «до/после» и решение о масштабировании.', '6–12 недель · фикс или фикс + бонус за метрику', 'Обсудить пилот'],
+    ['Трансформация или внедрение с целевыми метриками, статусами и отчётностью для правления.', '3–12 месяцев · фикс по этапам или T&M', 'Обсудить проект'],
+    ['Кросс-функциональная команда или сервис по SLA: сопровождение АБС 24×7, DevOps, тестирование.', 'от 6 месяцев · абонентская плата по SLA', 'Собрать команду']
+  ];
+  var steps = document.querySelectorAll('.step');
+  var panel = document.querySelector('.detail');
+  function pick(i) {
+    steps.forEach(function (b, j) {
+      b.className = 'step ' + (i === j ? 'step-on' : 'step-off');
+      b.setAttribute('aria-pressed', i === j ? 'true' : 'false');
+    });
+    document.getElementById('f-get').textContent = data[i][0];
+    document.getElementById('f-term').textContent = data[i][1];
+    document.getElementById('f-cta').textContent = data[i][2];
+    panel.classList.remove('detail'); void panel.offsetWidth; panel.classList.add('detail');
+  }
+  steps.forEach(function (b, i) {
+    b.addEventListener('click', function () { pick(i); });
+    b.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight') { var n = (i + 1) % steps.length; steps[n].focus(); pick(n); }
+      if (e.key === 'ArrowLeft') { var p = (i + steps.length - 1) % steps.length; steps[p].focus(); pick(p); }
+    });
+  });
+  // Fallback reveal for browsers without CSS scroll-driven animations (Safari, Firefox)
+  if (!(window.CSS && CSS.supports('animation-timeline: view()')) && 'IntersectionObserver' in window
+      && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.documentElement.classList.add('io');
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.rv, .rv-line').forEach(function (el) { io.observe(el); });
+  }
+})();
+</script>
+
+</body>
+</html>

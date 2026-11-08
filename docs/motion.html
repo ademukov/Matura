@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1440">
+<title>Matura — анимации и интерактив</title>
+<meta name="robots" content="noindex">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
+<style>
+body { margin: 0; }
+a { color: #8FD3FF; } a:hover { color: #C9E9FF; }
+.hd { font-family: 'Inter Tight', Inter, sans-serif; letter-spacing: -0.02em; }
+.mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+.tok { padding: 24px; border-radius: 16px; background: #0F1117; box-shadow: 0 0 0 1px rgba(255,255,255,.08) inset; display: flex; flex-direction: column; gap: 10px; }
+.row { display: grid; grid-template-columns: 220px repeat(3, minmax(0, 1fr)); gap: 24px; padding: 24px 0; border-top: 1px solid rgba(255,255,255,.08); font-size: 14px; line-height: 1.6; color: #B9C0CF; }
+.row b { color: #ECEEF3; font-weight: 500; }
+.lbl { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: #7FC8F5; }
+.ease { animation: ease 2.4s cubic-bezier(.22,1,.36,1) infinite alternate; }
+@keyframes ease { from { transform: translateX(0); } to { transform: translateX(220px); } }
+</style>
+
+<style>body{background:#07080B;}</style>
+</head>
+<body>
+<p style="margin:0;padding:16px 24px;font:14px Inter,sans-serif;background:#07080B;"><a href="../index.html">← К сайту</a></p>
+
+<div style="max-width: 1440px; margin: 0 auto; box-sizing: border-box; padding: 96px 112px; background: #07080B; color: #ECEEF3; font-family: Inter, system-ui, sans-serif; display: flex; flex-direction: column; gap: 64px;">
+
+<div style="display: flex; flex-direction: column; gap: 16px; max-width: 900px;">
+<span class="mono lbl">Спецификация движения · Matura</span>
+<h1 class="hd" style="margin: 0; font-size: 60px; font-weight: 600; line-height: 1.04;">Анимации и интерактив</h1>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #A7AEBF;">Движение объясняет, а не украшает: каждый эффект показывает поток данных, порядок шагов или состояние. Всё анимируется только через transform и opacity, петли останавливаются вне экрана.</p>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px;">
+<div class="tok"><span class="mono lbl">Кривая</span><span class="mono" style="font-size: 15px;">cubic-bezier(.22, 1, .36, 1)</span><span style="font-size: 13px; color: #9AA1B2;">expo-out: быстрый старт, мягкая посадка. Для всех reveal и hover.</span><div style="position: relative; height: 24px; margin-top: 6px;"><div style="position: absolute; top: 11px; left: 0; right: 0; height: 1px; background: rgba(255,255,255,.1);"></div><div class="ease" style="width: 24px; height: 24px; border-radius: 50%; background: linear-gradient(135deg, #6FD6FF, #A06BFF); box-shadow: 0 0 16px rgba(111,214,255,.6);"></div></div></div>
+<div class="tok"><span class="mono lbl">Длительности</span><span class="mono" style="font-size: 15px;">200 / 400 / 600 / 900 мс</span><span style="font-size: 13px; color: #9AA1B2;">Микро-ховер, смена состояния, появление блока, первый экран.</span></div>
+<div class="tok"><span class="mono lbl">Каскад</span><span class="mono" style="font-size: 15px;">60–80 мс между элементами</span><span style="font-size: 13px; color: #9AA1B2;">Слова заголовка, карточки, строки списков. Не больше 6 шагов в одном каскаде.</span></div>
+<div class="tok"><span class="mono lbl">Доступность</span><span class="mono" style="font-size: 15px;">prefers-reduced-motion</span><span style="font-size: 13px; color: #9AA1B2;">Петли выключены, reveal заменён мгновенным показом, счётчики сразу показывают итог.</span></div>
+</div>
+
+<div style="display: flex; flex-direction: column;">
+<div class="row mono" style="border-top: 0; padding-top: 0; font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: #7D8496;"><span>Раздел</span><span>Загрузка и скролл</span><span>Наведение и клик</span><span>Фоновая петля</span></div>
+<div class="row"><b>Навигация</b><span>После 24 px скролла фон уплотняется (blur 16 px), нижняя линия проявляется за 400 мс.</span><span>Подчёркивание ссылки растёт от центра. CTA: свечение усиливается, стрелка уходит на 4 px вправо.</span><span>—</span></div>
+<div class="row"><b>Первый экран</b><span>Сетка 64 px проявляется и сжимается со 106% до 100% за 1,6 с. Заголовок — по словам: снизу на 0,5 em, из размытия 10 px, шаг 80 мс. Последнее слово заливается градиентом.</span><span>Параллакс: слои схемы смещаются на 4–12 px против курсора. Наведение на узел (АБС, CI/CD, QA gate) подсвечивает его траектории и показывает подпись.</span><span><b>Траектории данных</b>: пунктир течёт по кривым Безье, по ним бегут «кометы» — запрос проходит от АБС через ядро к CI/CD и контролю качества. <b>Терминал</b>: построчно печатает прогон Playwright, зелёные галочки, итог quality gate: passed. Цикл 8 с.</span></div>
+<div class="row"><b>Цифры</b><span>Счётчики считают от 0 до значения за 1,2 с, когда блок виден на 40%. Разделители прорисовываются слева направо.</span><span>—</span><span>—</span></div>
+<div class="row"><b>Практики (bento)</b><span>Карточки появляются каскадом: снизу на 40 px, из размытия 8 px.</span><span>Карточка поднимается на 6 px. По контуру бежит свет (conic-gradient, круг за 6 с). Внутреннее свечение следует за курсором (CSS-переменные --x/--y). Стрелка «Подробнее» уходит на 6 px.</span><span>В карточке «Международная экспансия» комета летит по дуге RU → ASIA.</span></div>
+<div class="row"><b>Кейс: филиал в Китае</b><span>Стеклянная панель приезжает из масштаба 98%. Цифры считаются. Линия таймлайна привязана к скроллу: прорисовывается по мере прокрутки, этапы 01–05 загораются, когда линия до них доходит. Этап «Пройдены проверки регуляторов» вспыхивает последним.</span><span>Наведение на этап показывает короткое описание в стеклянной подсказке.</span><span>Медленный дрейф фиолетового и синего свечения в углах (14–18 с).</span></div>
+<div class="row"><b>Эффективность ИТ-поставки</b><span>Спарклайны метрик прорисовываются при появлении (stroke-dashoffset, 2,4 с).</span><span>Наведение на шаг конвейера показывает, что на нём проверяется. Клик по метрике раскрывает определение и формулу.</span><span><b>Импульс</b> проходит конвейер commit → build → playwright → quality gate → release за 3,2 с. На узле playwright вспыхивают галочки, quality gate мигает фиолетовым.</span></div>
+<div class="row"><b>Форматы работы</b><span>Шаги появляются лесенкой: каждый следующий выше на 8 px — визуальная метафора роста.</span><span>Клик (или стрелки ← →) выбирает формат: неоновый контур, панель деталей меняется перекрёстным затуханием (400 мс, сдвиг 12 px). В прототипе работает.</span><span>—</span></div>
+<div class="row"><b>Почему Matura</b><span>Строки проявляются по одной, номер считает 00 → 05.</span><span>Строка подсвечивается тонкой градиентной линией слева направо.</span><span>—</span></div>
+<div class="row"><b>Контакт</b><span>Панель проявляется, поля — каскадом.</span><span>Фокус поля: неоновое кольцо 4 px. Отправка: кнопка сжимается в круг загрузки, затем рисуется галочка и появляется «Спасибо, ответим в рабочее время».</span><span>—</span></div>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px;">
+<div class="tok" style="padding: 32px; gap: 14px;"><span class="mono lbl">Символика стека</span><span class="hd" style="font-size: 24px; font-weight: 600;">Траектории = JavaScript, терминал = Playwright</span><p style="margin: 0; font-size: 15px; line-height: 1.6; color: #A7AEBF;">Первый экран показывает то, что мы реально делаем: данные проходят от банковского ядра через интеграции и CI/CD к автотестам, и в прод попадает только сборка, прошедшая контроль качества. Так команда «Эффективность ИТ-поставки» видна уже на первом экране, но не становится главной темой сайта.</p></div>
+<div class="tok" style="padding: 32px; gap: 14px;"><span class="mono lbl">Реализация</span><ul style="margin: 0; padding-left: 18px; font-size: 15px; line-height: 1.75; color: #B9C0CF;"><li>Next.js + React, двуязычность через маршруты /ru и /en</li><li>Framer Motion — reveal, hover, смена состояний</li><li>GSAP ScrollTrigger — таймлайн кейса и счётчики, привязанные к скроллу</li><li>Lenis — плавный скролл; SVG + CSS — траектории (лёгкий вариант)</li><li>React Three Fiber — 3D-версия первого экрана только для десктопа, ленивая загрузка</li><li>Бюджет: LCP &lt; 2,5 с, 60 fps, петли на паузе вне экрана</li></ul></div>
+</div>
+
+<p class="mono" style="margin: 0; font-size: 12px; color: #7D8496; line-height: 1.7;">В прототипе reveal при скролле сделан на CSS scroll-driven animations (Chrome, Edge). В Safari и Firefox контент показывается сразу, без анимации появления.</p>
+</div>
+
+</body>
+</html>
