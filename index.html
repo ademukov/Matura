@@ -6,6 +6,7 @@
 <title>Matura — ИТ-консалтинг для банков</title>
 <meta name="description" content="Стратегия, смена платформ и выход на новые рынки — от решения правления до запуска. ИТ-консалтинг для банков: Россия, СНГ, Азия.">
 <meta name="robots" content="noindex">
+<link rel="alternate" hreflang="en" href="en/">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
@@ -159,7 +160,7 @@ a { color: #8FD3FF; } a:hover { color: #C9E9FF; }
 <div style="display: flex; align-items: center; gap: 16px; margin-left: auto;">
 <div class="mono" style="display: flex; gap: 2px; padding: 3px; border-radius: 999px; box-shadow: 0 0 0 1px rgba(255,255,255,.1) inset; font-size: 12px;">
 <a href="#top" aria-current="true" style="padding: 8px 10px; border-radius: 999px; background: rgba(255,255,255,.08); color: #FFFFFF; text-decoration: none;">RU</a>
-<a href="#top" style="padding: 8px 10px; border-radius: 999px; color: #8B92A3; text-decoration: none;">EN</a>
+<a href="en/index.html" hreflang="en" style="padding: 8px 10px; border-radius: 999px; color: #8B92A3; text-decoration: none;">EN</a>
 </div>
 <a class="btn btn-p nav-cta" href="#contact" style="min-height: 40px; padding: 0 18px; font-size: 14px;">Заказать диагностику</a>
 </div>
@@ -421,12 +422,7 @@ a { color: #8FD3FF; } a:hover { color: #C9E9FF; }
 
 <script>
 (function () {
-  var data = [
-    ['Отчёт «как сейчас», 5–10 приоритетных решений с оценкой эффекта и дорожная карта.', '2–4 недели · фиксированная стоимость', 'Заказать диагностику'],
-    ['Одно решение внедрено на одной команде или процессе, замер «до/после» и решение о масштабировании.', '6–12 недель · фикс или фикс + бонус за метрику', 'Обсудить пилот'],
-    ['Трансформация или внедрение с целевыми метриками, статусами и отчётностью для правления.', '3–12 месяцев · фикс по этапам или T&M', 'Обсудить проект'],
-    ['Кросс-функциональная команда или сервис по SLA: сопровождение АБС 24×7, DevOps, тестирование.', 'от 6 месяцев · абонентская плата по SLA', 'Собрать команду']
-  ];
+  var data = [["Отчёт «как сейчас», 5–10 приоритетных решений с оценкой эффекта и дорожная карта.", "2–4 недели · фиксированная стоимость", "Заказать диагностику"], ["Одно решение внедрено на одной команде или процессе, замер «до/после» и решение о масштабировании.", "6–12 недель · фикс или фикс + бонус за метрику", "Обсудить пилот"], ["Трансформация или внедрение с целевыми метриками, статусами и отчётностью для правления.", "3–12 месяцев · фикс по этапам или T&M", "Обсудить проект"], ["Кросс-функциональная команда или сервис по SLA: сопровождение АБС 24×7, DevOps, тестирование.", "от 6 месяцев · абонентская плата по SLA", "Собрать команду"]];
   var steps = document.querySelectorAll('.step');
   var panel = document.querySelector('.detail');
   function pick(i) {

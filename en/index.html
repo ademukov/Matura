@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Matura — IT consulting for banks</title>
+<meta name="description" content="Strategy, core platform change and market entry for banks — from board decision to go-live. Russia, CIS and Asia.">
+<meta name="robots" content="noindex">
+<link rel="alternate" hreflang="ru" href="../">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
+<style>
+body { margin: 0; background: #07080B; }
+html { scroll-behavior: smooth; }
+section[id] { scroll-margin-top: 88px; }
+.totop { position: fixed; right: 24px; bottom: 24px; z-index: 30; width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; color: #ECEEF3; font-size: 18px; background: rgba(20,22,30,.8); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); box-shadow: 0 0 0 1px rgba(255,255,255,.12) inset, 0 10px 30px -10px rgba(0,0,0,.8); opacity: 0; pointer-events: none; transform: translateY(12px); transition: opacity .4s, transform .4s cubic-bezier(.22,1,.36,1), box-shadow .3s; }
+.totop.show { opacity: 1; pointer-events: auto; transform: none; }
+.totop:hover { color: #FFFFFF; box-shadow: 0 0 0 1px rgba(111,214,255,.6) inset, 0 0 24px -4px rgba(111,214,255,.5); }
+a { color: #8FD3FF; } a:hover { color: #C9E9FF; }
+.mt { font-family: Inter, system-ui, sans-serif; color: #ECEEF3; background: #07080B; overflow-x: clip; -webkit-font-smoothing: antialiased; }
+.wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; box-sizing: border-box; }
+.hd { font-family: 'Inter Tight', Inter, sans-serif; letter-spacing: -0.02em; }
+.mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+.grad { background: linear-gradient(92deg, #4CC9F0 0%, #7B8CFF 45%, #A06BFF 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.btn { display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 22px; border-radius: 999px; font-size: 15px; font-weight: 500; text-decoration: none; transition: transform .4s cubic-bezier(.22,1,.36,1), box-shadow .4s, background .4s; }
+.btn-p { color: #07080B; background: linear-gradient(92deg, #6FD6FF, #9B8CFF); box-shadow: 0 0 0 1px rgba(255,255,255,.12) inset, 0 8px 32px -8px rgba(110,140,255,.55); }
+.btn-p:hover { color: #07080B; transform: translateY(-2px); box-shadow: 0 0 0 1px rgba(255,255,255,.2) inset, 0 14px 44px -8px rgba(120,150,255,.8); }
+.btn-g { color: #ECEEF3; background: rgba(255,255,255,.04); box-shadow: 0 0 0 1px rgba(255,255,255,.12) inset; }
+.btn-g:hover { color: #FFFFFF; background: rgba(255,255,255,.08); }
+.btn .ar { transition: transform .4s cubic-bezier(.22,1,.36,1); }
+.btn:hover .ar { transform: translateX(4px); }
+.nav a.nl { color: #A7AEBF; text-decoration: none; font-size: 14px; padding: 10px 4px; transition: color .3s; }
+.nav a.nl:hover { color: #FFFFFF; }
+.eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: #9AA1B2; padding: 8px 14px; border-radius: 999px; background: rgba(255,255,255,.03); box-shadow: 0 0 0 1px rgba(255,255,255,.08) inset; }
+.dot { width: 6px; height: 6px; border-radius: 50%; background: #4CC9F0; box-shadow: 0 0 12px #4CC9F0; animation: pulse 2.4s ease-in-out infinite; }
+.hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px); background-size: 64px 64px; -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, #000 30%, transparent 75%); mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, #000 30%, transparent 75%); animation: gridIn 1.6s cubic-bezier(.22,1,.36,1) both; }
+.glow-a { position: absolute; width: 720px; height: 720px; left: 50%; top: -360px; transform: translateX(-30%); border-radius: 50%; background: radial-gradient(circle, rgba(76,201,240,.18), transparent 60%); filter: blur(20px); animation: drift 14s ease-in-out infinite alternate; }
+.glow-b { position: absolute; width: 640px; height: 640px; right: -200px; top: 120px; border-radius: 50%; background: radial-gradient(circle, rgba(123,92,255,.20), transparent 60%); filter: blur(24px); animation: drift 18s ease-in-out infinite alternate-reverse; }
+.h1 { font-size: clamp(36px, 5.2vw, 68px); line-height: 1.02; font-weight: 600; margin: 0; }
+.h2 { font-size: clamp(32px, 4vw, 52px); line-height: 1.06; font-weight: 600; margin: 0; }
+.lead { font-size: 19px; line-height: 1.55; color: #A7AEBF; margin: 0; }
+.word { display: inline-block; animation: wordIn 1s cubic-bezier(.22,1,.36,1) both; }
+.w2 { animation-delay: .08s; } .w3 { animation-delay: .16s; } .w4 { animation-delay: .24s; } .w5 { animation-delay: .32s; }
+.fade1 { animation: up .9s .45s cubic-bezier(.22,1,.36,1) both; }
+.fade2 { animation: up .9s .6s cubic-bezier(.22,1,.36,1) both; }
+.fade3 { animation: up .9s .75s cubic-bezier(.22,1,.36,1) both; }
+.glass { box-sizing: border-box; background: linear-gradient(180deg, rgba(28,31,42,.72), rgba(14,16,22,.72)); -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px); box-shadow: 0 0 0 1px rgba(255,255,255,.08) inset, 0 30px 80px -30px rgba(0,0,0,.8); border-radius: 18px; }
+.term-line { opacity: 0; animation: termIn .5s cubic-bezier(.22,1,.36,1) forwards; white-space: nowrap; }
+.t1 { animation-delay: 1.0s; } .t2 { animation-delay: 1.6s; } .t3 { animation-delay: 2.2s; } .t4 { animation-delay: 2.8s; } .t5 { animation-delay: 3.5s; }
+.caret { display: inline-block; width: 8px; height: 15px; background: #4CC9F0; vertical-align: -2px; animation: blink 1s steps(2) infinite; }
+.trace { stroke-dasharray: 3 9; animation: flow 3.5s linear infinite; }
+.comet { stroke-dasharray: 60 900; stroke-dashoffset: 960; animation: comet 4.2s cubic-bezier(.45,0,.2,1) infinite; }
+.c2 { animation-delay: 1.4s; } .c3 { animation-delay: 2.6s; }
+.node { animation: nodePulse 3s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+.n2 { animation-delay: .6s; } .n3 { animation-delay: 1.2s; } .n4 { animation-delay: 1.8s; }
+.stat { padding: 28px 0; border-top: 1px solid rgba(255,255,255,.08); }
+.sec { padding: 140px 0 0; }
+.kicker { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: #7FC8F5; }
+.bento { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 16px; }
+.s3 { grid-column: span 3; } .s2 { grid-column: span 2; }
+.card { position: relative; border-radius: 20px; padding: 32px; background: linear-gradient(180deg, #111319, #0C0E13); box-shadow: 0 0 0 1px rgba(255,255,255,.07) inset; overflow: hidden; transition: transform .6s cubic-bezier(.22,1,.36,1), box-shadow .6s; text-decoration: none; color: #ECEEF3; display: flex; flex-direction: column; gap: 14px; min-height: 260px; box-sizing: border-box; }
+.card::before { content: ''; position: absolute; inset: 0; border-radius: 20px; padding: 1px; background: conic-gradient(from var(--a, 0deg), transparent 0deg, rgba(76,201,240,.9) 60deg, rgba(160,107,255,.9) 120deg, transparent 180deg, transparent 360deg); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; opacity: 0; transition: opacity .5s; animation: spin 6s linear infinite; }
+.card::after { content: ''; position: absolute; width: 420px; height: 420px; right: -160px; top: -200px; border-radius: 50%; background: radial-gradient(circle, rgba(110,150,255,.16), transparent 65%); opacity: .35; transition: opacity .6s, transform .8s cubic-bezier(.22,1,.36,1); pointer-events: none; }
+.card:hover { transform: translateY(-6px); color: #ECEEF3; }
+.card:hover::before { opacity: 1; }
+.card:hover::after { opacity: 1; transform: translate(-40px, 40px); }
+.card .more { margin-top: auto; font-size: 14px; color: #8FD3FF; display: inline-flex; gap: 8px; align-items: center; }
+.card .more .ar { transition: transform .5s cubic-bezier(.22,1,.36,1); }
+.card:hover .more .ar { transform: translateX(6px); }
+.chip { font-size: 12px; color: #B9C0CF; padding: 6px 10px; border-radius: 8px; background: rgba(255,255,255,.04); box-shadow: 0 0 0 1px rgba(255,255,255,.07) inset; }
+.num { font-size: 12px; color: #7D8496; }
+.tl-bar { height: 2px; background: linear-gradient(90deg, #4CC9F0, #A06BFF); transform-origin: left; }
+.pipe-pulse { position: absolute; top: 50%; width: 120px; height: 2px; margin-top: -1px; background: linear-gradient(90deg, transparent, #6FD6FF, #FFFFFF); filter: drop-shadow(0 0 8px #6FD6FF); animation: pipe 3.2s cubic-bezier(.45,0,.2,1) infinite; }
+.spark { stroke-dasharray: 400; stroke-dashoffset: 400; animation: draw 2.4s cubic-bezier(.22,1,.36,1) forwards; }
+.step { all: unset; box-sizing: border-box; cursor: pointer; display: flex; flex-direction: column; gap: 8px; padding: 22px; border-radius: 16px; min-height: 120px; transition: background .4s, box-shadow .4s, transform .4s cubic-bezier(.22,1,.36,1); }
+.step:hover { transform: translateY(-3px); }
+.step:focus-visible { outline: 2px solid #6FD6FF; outline-offset: 3px; }
+.step-off { background: rgba(255,255,255,.02); box-shadow: 0 0 0 1px rgba(255,255,255,.07) inset; color: #A7AEBF; }
+.step-on { background: linear-gradient(180deg, rgba(76,201,240,.12), rgba(123,92,255,.08)); box-shadow: 0 0 0 1px rgba(111,214,255,.55) inset, 0 0 40px -10px rgba(111,214,255,.45); color: #FFFFFF; }
+.detail { animation: up .6s cubic-bezier(.22,1,.36,1) both; }
+.reason { padding: 28px 0; border-top: 1px solid rgba(255,255,255,.08); display: grid; grid-template-columns: 64px minmax(0,1fr); gap: 16px; }
+.field { display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: #A7AEBF; }
+.inp { font: inherit; font-size: 15px; color: #ECEEF3; background: rgba(255,255,255,.03); border: 0; box-shadow: 0 0 0 1px rgba(255,255,255,.10) inset; border-radius: 12px; padding: 14px 16px; min-height: 48px; box-sizing: border-box; transition: box-shadow .3s; }
+.inp:focus { outline: none; box-shadow: 0 0 0 1px #6FD6FF inset, 0 0 0 4px rgba(111,214,255,.15); }
+.ind { padding: 24px; border-radius: 16px; box-shadow: 0 0 0 1px rgba(255,255,255,.07) inset; background: rgba(255,255,255,.015); transition: box-shadow .4s, background .4s; }
+.ind:hover { box-shadow: 0 0 0 1px rgba(160,107,255,.5) inset; background: rgba(160,107,255,.05); }
+.rv { }
+@supports (animation-timeline: view()) {
+  .rv { animation: reveal linear both; animation-timeline: view(); animation-range: entry 0% cover 28%; }
+  .rv-line { animation: lineGrow linear both; animation-timeline: view(); animation-range: entry 10% cover 45%; }
+}
+@keyframes reveal { from { opacity: 0; transform: translateY(40px); filter: blur(8px); } to { opacity: 1; transform: none; filter: none; } }
+@keyframes lineGrow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes wordIn { from { opacity: 0; transform: translateY(.5em); filter: blur(10px); } to { opacity: 1; transform: none; filter: none; } }
+@keyframes up { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+@keyframes termIn { from { opacity: 0; transform: translateX(-8px); } to { opacity: 1; transform: none; } }
+@keyframes blink { 0% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes flow { to { stroke-dashoffset: -120; } }
+@keyframes comet { from { stroke-dashoffset: 960; } to { stroke-dashoffset: 0; } }
+@keyframes nodePulse { 0%, 100% { opacity: .55; transform: scale(1); } 50% { opacity: 1; transform: scale(1.25); } }
+@keyframes pulse { 0%, 100% { opacity: .5; } 50% { opacity: 1; } }
+@keyframes gridIn { from { opacity: 0; transform: scale(1.06); } to { opacity: 1; transform: none; } }
+@keyframes drift { from { transform: translate(-30%, 0); } to { transform: translate(-20%, 60px); } }
+@keyframes pipe { from { left: -120px; opacity: 0; } 15% { opacity: 1; } 85% { opacity: 1; } to { left: 100%; opacity: 0; } }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+@property --a { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
+@keyframes spin { to { --a: 360deg; } }
+@media (max-width: 900px) {
+  .bento { grid-template-columns: minmax(0, 1fr); }
+  .s3, .s2 { grid-column: auto; }
+  .nav-links { display: none !important; }
+  .hero-row { flex-direction: column; align-items: stretch !important; }
+  .hero-vis { flex: 0 0 auto !important; height: 520px !important; }
+  .sec { padding-top: 96px; }
+}
+@media (max-width: 600px) {
+  .nav-cta { display: none !important; }
+  .frm { grid-template-columns: minmax(0, 1fr) !important; }
+  .pipe { grid-template-columns: minmax(0, 1fr) !important; }
+  .pipe-line { display: none; }
+  .h2 { font-size: 30px !important; }
+  .h1 { font-size: 32px !important; }
+  .hero-vis { height: 430px !important; }
+  .hero-vis svg { height: 260px !important; }
+  .term { font-size: 10.5px !important; padding: 14px 16px !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .term-line { opacity: 1; }
+  .spark { stroke-dashoffset: 0; }
+}
+</style>
+
+<style>
+.io .rv { opacity: 0; transform: translateY(40px); filter: blur(8px); transition: opacity .9s cubic-bezier(.22,1,.36,1), transform .9s cubic-bezier(.22,1,.36,1), filter .9s; }
+.io .rv.in { opacity: 1; transform: none; filter: none; }
+.io .rv-line { transform: scaleX(0); transition: transform 1.4s cubic-bezier(.22,1,.36,1); }
+.io .rv-line.in { transform: scaleX(1); }
+</style>
+</head>
+<body>
+
+<div class="mt" style="width: 100%; min-height: 100vh; position: relative;">
+
+<header class="nav" style="position: sticky; top: 0; z-index: 20; background: rgba(7,8,11,.72); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255,255,255,.06);">
+<div class="wrap" style="display: flex; align-items: center; gap: 32px; height: 72px;">
+<a href="#top" aria-label="Matura — home" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #FFFFFF;">
+<svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6FD6FF"></stop><stop offset="1" stop-color="#A06BFF"></stop></linearGradient></defs><circle cx="14" cy="14" r="12" fill="none" stroke="url(#lg)" stroke-width="2"></circle><circle cx="14" cy="14" r="6.5" fill="none" stroke="url(#lg)" stroke-width="2" stroke-dasharray="28 13"></circle><circle cx="14" cy="14" r="2" fill="#FFFFFF"></circle></svg>
+<span class="hd" style="font-size: 20px; font-weight: 600;">matura</span>
+</a>
+<nav class="nav-links" aria-label="Main navigation" style="display: flex; gap: 24px; flex-grow: 1;">
+<a class="nl" href="#practices">Practices</a>
+<a class="nl" href="#case">Cases</a>
+<a class="nl" href="#delivery">Quality</a>
+<a class="nl" href="#formats">How we work</a>
+<a class="nl" href="#why">About</a>
+</nav>
+<div style="display: flex; align-items: center; gap: 16px; margin-left: auto;">
+<div class="mono" style="display: flex; gap: 2px; padding: 3px; border-radius: 999px; box-shadow: 0 0 0 1px rgba(255,255,255,.1) inset; font-size: 12px;">
+<a href="../index.html" hreflang="ru" style="padding: 8px 10px; border-radius: 999px; color: #8B92A3; text-decoration: none;">RU</a>
+<a href="#top" aria-current="true" style="padding: 8px 10px; border-radius: 999px; background: rgba(255,255,255,.08); color: #FFFFFF; text-decoration: none;">EN</a>
+</div>
+<a class="btn btn-p nav-cta" href="#contact" style="min-height: 40px; padding: 0 18px; font-size: 14px;">Book a diagnostic</a>
+</div>
+</div>
+</header>
+
+<section id="top" style="position: relative; padding: 120px 0 80px; overflow: hidden;">
+<div class="hero-grid" aria-hidden="true"></div>
+<div class="glow-a" aria-hidden="true"></div>
+<div class="glow-b" aria-hidden="true"></div>
+<div class="wrap hero-row" style="position: relative; display: flex; gap: 48px; align-items: center;">
+<div style="flex: 1.25 1 600px; min-width: 0; display: flex; flex-direction: column; gap: 28px;">
+<span class="eyebrow mono fade1" style="align-self: flex-start;"><span class="dot"></span>IT consulting for banks · Russia · CIS · Asia</span>
+<h1 class="h1 hd"><span class="word">From</span> <span class="word w2">board</span> <span class="word w3">decision</span> <span class="word w4 grad">to go‑live</span></h1>
+<p class="lead fade2" style="max-width: 560px;">Strategy, core platform change and market entry for banks — delivered by one team of 35+ experts who built IT for some of the largest banks in Russia.</p>
+<div class="fade3" style="display: flex; flex-wrap: wrap; gap: 12px;">
+<a class="btn btn-p" href="#contact">Book a diagnostic <span class="ar" aria-hidden="true">→</span></a>
+<a class="btn btn-g" href="#case">Case: a bank branch in China</a>
+</div>
+<p class="mono fade3" style="margin: 8px 0 0; font-size: 12px; line-height: 1.7; color: #7D8496;">Team experience: top-10 Russian banks · tier-1 telecom operators · national digital government platforms</p>
+</div>
+
+<div class="hero-vis" style="flex: 1 1 440px; min-width: 0; position: relative; height: 540px;" aria-hidden="true">
+<svg viewBox="0 40 560 400" style="position: absolute; left: 0; top: 0; width: 100%; height: 370px;">
+<defs>
+<linearGradient id="cg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#4CC9F0" stop-opacity="0"></stop><stop offset=".7" stop-color="#6FD6FF"></stop><stop offset="1" stop-color="#FFFFFF"></stop></linearGradient>
+<radialGradient id="ng"><stop offset="0" stop-color="#FFFFFF"></stop><stop offset=".4" stop-color="#6FD6FF"></stop><stop offset="1" stop-color="#6FD6FF" stop-opacity="0"></stop></radialGradient>
+<radialGradient id="ng2"><stop offset="0" stop-color="#FFFFFF"></stop><stop offset=".4" stop-color="#A06BFF"></stop><stop offset="1" stop-color="#A06BFF" stop-opacity="0"></stop></radialGradient>
+</defs>
+<circle cx="300" cy="230" r="200" fill="none" stroke="rgba(255,255,255,.05)"></circle>
+<circle cx="300" cy="230" r="140" fill="none" stroke="rgba(255,255,255,.06)" stroke-dasharray="2 6"></circle>
+<circle cx="300" cy="230" r="80" fill="none" stroke="rgba(111,214,255,.18)"></circle>
+<path class="trace" d="M60 120 C 160 120, 200 230, 300 230" fill="none" stroke="rgba(111,214,255,.45)" stroke-width="1.2"></path>
+<path class="trace" d="M60 340 C 160 340, 200 230, 300 230" fill="none" stroke="rgba(160,107,255,.45)" stroke-width="1.2"></path>
+<path class="trace" d="M300 230 C 400 230, 420 90, 520 90" fill="none" stroke="rgba(111,214,255,.45)" stroke-width="1.2"></path>
+<path class="trace" d="M300 230 C 400 230, 430 370, 520 370" fill="none" stroke="rgba(160,107,255,.45)" stroke-width="1.2"></path>
+<path class="trace" d="M300 230 L 300 470" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="1"></path>
+<path class="comet" d="M60 120 C 160 120, 200 230, 300 230 C 400 230, 420 90, 520 90" fill="none" stroke="url(#cg)" stroke-width="2.2" stroke-linecap="round"></path>
+<path class="comet c2" d="M60 340 C 160 340, 200 230, 300 230 C 400 230, 430 370, 520 370" fill="none" stroke="url(#cg)" stroke-width="2.2" stroke-linecap="round"></path>
+<path class="comet c3" d="M60 120 C 160 120, 200 230, 300 230 C 400 230, 430 370, 520 370" fill="none" stroke="url(#cg)" stroke-width="1.6" stroke-linecap="round"></path>
+<circle class="node" cx="60" cy="120" r="10" fill="url(#ng)"></circle>
+<circle class="node n2" cx="60" cy="340" r="10" fill="url(#ng2)"></circle>
+<circle class="node n3" cx="520" cy="90" r="10" fill="url(#ng)"></circle>
+<circle class="node n4" cx="520" cy="370" r="10" fill="url(#ng2)"></circle>
+<circle cx="300" cy="230" r="34" fill="rgba(14,16,22,.9)" stroke="url(#cg)" stroke-width="1.5"></circle>
+<circle class="node" cx="300" cy="230" r="14" fill="url(#ng)"></circle>
+<text x="60" y="98" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#8B92A3">CBS</text>
+<text x="60" y="372" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#8B92A3">Payments · API</text>
+<text x="520" y="68" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#8B92A3">CI/CD</text>
+<text x="520" y="402" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#8B92A3">QA gate</text>
+<text x="300" y="186" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#CFE9FF">core</text>
+</svg>
+<div class="glass mono term" style="position: absolute; left: 0; bottom: 0; overflow: hidden; width: min(100%, 420px); padding: 18px 20px; font-size: 12.5px; line-height: 1.9; color: #B9C0CF;">
+<div style="display: flex; gap: 6px; margin-bottom: 10px;"><span style="width: 10px; height: 10px; border-radius: 50%; background: #2A2E3A;"></span><span style="width: 10px; height: 10px; border-radius: 50%; background: #2A2E3A;"></span><span style="width: 10px; height: 10px; border-radius: 50%; background: #2A2E3A;"></span><span style="margin-left: auto; font-size: 11px; color: #7D8496;">release-pipeline.ts</span></div>
+<div class="term-line t1"><span style="color: #7D8496;">$</span> npx playwright test --project=core-banking</div>
+<div class="term-line t2"><span style="color: #5EE6A8;">✓</span> payments/sbp-transfer.spec.ts</div>
+<div class="term-line t3"><span style="color: #5EE6A8;">✓</span> accounts/open-account.spec.ts</div>
+<div class="term-line t4"><span style="color: #5EE6A8;">✓</span> reports/regulatory-export.spec.ts</div>
+<div class="term-line t5"><span style="color: #8FD3FF;">→</span> quality gate: <span style="color: #FFFFFF;">passed</span> · release ready <span class="caret"></span></div>
+</div>
+</div>
+</div>
+</section>
+
+<section aria-label="Key figures" class="wrap" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0 32px;">
+<div class="stat rv"><div class="hd" style="font-size: 44px; font-weight: 600;">35+</div><div style="color: #9AA1B2; font-size: 14px; margin-top: 6px;">in-house experts</div></div>
+<div class="stat rv"><div class="hd" style="font-size: 44px; font-weight: 600;">~18 yrs</div><div style="color: #9AA1B2; font-size: 14px; margin-top: 6px;">average expert experience</div></div>
+<div class="stat rv"><div class="hd" style="font-size: 44px; font-weight: 600;">24/7</div><div style="color: #9AA1B2; font-size: 14px; margin-top: 6px;">support for critical systems</div></div>
+<div class="stat rv"><div class="hd" style="font-size: 44px; font-weight: 600;">3 countries</div><div style="color: #9AA1B2; font-size: 14px; margin-top: 6px;">of delivery: Russia, China, Kazakhstan</div></div>
+</section>
+
+<section id="practices" class="sec">
+<div class="wrap">
+<div class="rv" style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 48px;">
+<div style="display: flex; flex-direction: column; gap: 16px; max-width: 680px;">
+<span class="kicker mono">Practices</span>
+<h2 class="h2 hd">Six practices. One accountability for results.</h2>
+</div>
+<p class="lead" style="max-width: 400px; font-size: 16px;">We don’t hand over a report and leave. We implement what we recommend — and own the launch.</p>
+</div>
+<div class="bento">
+<a class="card s3 rv" href="#contact">
+<span class="num mono">01</span>
+<h3 class="hd" style="margin: 0; font-size: 26px; font-weight: 600;">Strategy &amp; Transformation</h3>
+<p style="margin: 0; color: #A7AEBF; line-height: 1.55;">Where to invest in IT and how to get the programme approved by the board. A roadmap, P&amp;L and a business case that passes the committee.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px;"><span class="chip">IT strategy</span><span class="chip">Financial model</span><span class="chip">Process analysis</span><span class="chip">Regulation</span></div>
+<span class="more">Learn more <span class="ar" aria-hidden="true">→</span></span>
+</a>
+<a class="card s3 rv" href="#case">
+<span class="num mono">02</span>
+<h3 class="hd" style="margin: 0; font-size: 26px; font-weight: 600;">International Expansion</h3>
+<p style="margin: 0; color: #A7AEBF; line-height: 1.55;">A branch or subsidiary bank abroad: infrastructure, core banking, reporting for two jurisdictions and local regulator inspections.</p>
+<svg viewBox="0 0 400 70" style="width: 100%; height: 70px;" aria-hidden="true"><path class="trace" d="M20 50 Q 200 -10 380 40" fill="none" stroke="rgba(111,214,255,.6)" stroke-width="1.2"></path><path class="comet" d="M20 50 Q 200 -10 380 40" fill="none" stroke="url(#cg)" stroke-width="2" stroke-linecap="round"></path><circle cx="20" cy="50" r="4" fill="#6FD6FF"></circle><circle cx="380" cy="40" r="4" fill="#A06BFF"></circle><text x="20" y="68" font-family="JetBrains Mono, monospace" font-size="10" fill="#8B92A3">RU</text><text x="364" y="62" font-family="JetBrains Mono, monospace" font-size="10" fill="#8B92A3">ASIA</text></svg>
+<span class="more">View case <span class="ar" aria-hidden="true">→</span></span>
+</a>
+<a class="card s2 rv" href="#contact">
+<span class="num mono">03</span>
+<h3 class="hd" style="margin: 0; font-size: 22px; font-weight: 600;">Core Banking &amp; Payments</h3>
+<p style="margin: 0; color: #A7AEBF; line-height: 1.55;">Replace your core banking system without stopping the operating day. CFT, instant payments, CBDC, digital banking.</p>
+<span class="more">Learn more <span class="ar" aria-hidden="true">→</span></span>
+</a>
+<a class="card s2 rv" href="#contact">
+<span class="num mono">04</span>
+<h3 class="hd" style="margin: 0; font-size: 22px; font-weight: 600;">Architecture &amp; Modernization</h3>
+<p style="margin: 0; color: #A7AEBF; line-height: 1.55;">Platforms that withstand peak load, security audits and vendor exit.</p>
+<span class="more">Learn more <span class="ar" aria-hidden="true">→</span></span>
+</a>
+<a class="card s2 rv" href="#delivery">
+<span class="num mono">05</span>
+<h3 class="hd" style="margin: 0; font-size: 22px; font-weight: 600;">Delivery Excellence</h3>
+<p style="margin: 0; color: #A7AEBF; line-height: 1.55;">SDLC, metrics-driven quality, secure development and automation — releases on time and without incidents.</p>
+<span class="more">Learn more <span class="ar" aria-hidden="true">→</span></span>
+</a>
+<a class="card s3 rv" href="#contact" style="min-height: 200px;">
+<span class="num mono">06</span>
+<h3 class="hd" style="margin: 0; font-size: 22px; font-weight: 600;">Artificial Intelligence</h3>
+<p style="margin: 0; color: #A7AEBF; line-height: 1.55;">Measurable impact from AI, not another pilot on the shelf: readiness assessment, adoption in processes, agents in products.</p>
+<span class="more">Learn more <span class="ar" aria-hidden="true">→</span></span>
+</a>
+<a class="card s3 rv" href="#formats" style="min-height: 200px; background: linear-gradient(135deg, rgba(76,201,240,.10), rgba(123,92,255,.10)), #0C0E13;">
+<span class="num mono">START</span>
+<h3 class="hd" style="margin: 0; font-size: 22px; font-weight: 600;">Not sure where to start?</h3>
+<p style="margin: 0; color: #B9C0CF; line-height: 1.55;">A 2–4 week diagnostic at a fixed price: where you are, where you lose time and money, and which 5–10 decisions will pay off.</p>
+<span class="more">How we work <span class="ar" aria-hidden="true">→</span></span>
+</a>
+</div>
+</div>
+</section>
+
+<section id="case" class="sec">
+<div class="wrap">
+<div class="glass rv" style="position: relative; padding: clamp(28px, 5vw, 64px); overflow: hidden;">
+<div aria-hidden="true" style="position: absolute; inset: 0; background: radial-gradient(ellipse 60% 80% at 100% 0%, rgba(123,92,255,.16), transparent 60%), radial-gradient(ellipse 50% 70% at 0% 100%, rgba(76,201,240,.12), transparent 60%);"></div>
+<div style="position: relative; display: flex; flex-direction: column; gap: 40px;">
+<div style="display: flex; flex-direction: column; gap: 16px; max-width: 820px;">
+<span class="kicker mono">Team experience · international expansion</span>
+<h2 class="h2 hd">A Russian bank’s branch in China — from an empty office to licence readiness</h2>
+<p class="lead" style="font-size: 17px;">The team built the branch’s IT landscape from scratch, deployed the core banking system and prepared the bank for regulatory inspections.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+<div style="padding: 24px; border-radius: 16px; background: rgba(255,255,255,.03); box-shadow: 0 0 0 1px rgba(255,255,255,.07) inset;"><div class="hd grad" style="font-size: 40px; font-weight: 600;">100%</div><div style="color: #A7AEBF; font-size: 14px; margin-top: 6px;">readiness for the banking licence</div></div>
+<div style="padding: 24px; border-radius: 16px; background: rgba(255,255,255,.03); box-shadow: 0 0 0 1px rgba(255,255,255,.07) inset;"><div class="hd grad" style="font-size: 40px; font-weight: 600;">2 data centres</div><div style="color: #A7AEBF; font-size: 14px; margin-top: 6px;">autonomous, geo-distributed infrastructure</div></div>
+<div style="padding: 24px; border-radius: 16px; background: rgba(255,255,255,.03); box-shadow: 0 0 0 1px rgba(255,255,255,.07) inset;"><div class="hd grad" style="font-size: 40px; font-weight: 600;">2</div><div style="color: #A7AEBF; font-size: 14px; margin-top: 6px;">jurisdictions: regulatory reporting configured and tested</div></div>
+<div style="padding: 24px; border-radius: 16px; background: rgba(255,255,255,.03); box-shadow: 0 0 0 1px rgba(255,255,255,.07) inset;"><div class="hd grad" style="font-size: 40px; font-weight: 600;">16</div><div style="color: #A7AEBF; font-size: 14px; margin-top: 6px;">branch staff trained and operating</div></div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 18px;">
+<div class="tl-bar rv-line"></div>
+<div class="mono" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px; font-size: 12px; color: #9AA1B2;">
+<span>01 · Infrastructure &amp; data centres</span><span>02 · Core banking &amp; processes</span><span>03 · Reporting</span><span>04 · Branch team</span><span style="color: #FFFFFF;">05 · Regulatory inspections passed</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="delivery" class="sec">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 48px;">
+<div class="rv" style="display: flex; flex-direction: column; gap: 16px; max-width: 760px;">
+<span class="kicker mono">Delivery Excellence</span>
+<h2 class="h2 hd">IT that ships on time — and proves it in numbers</h2>
+<p class="lead" style="font-size: 17px;">We set up SDLC, test automation and quality gates so the board sees predictability, not promises.</p>
+</div>
+<div class="glass rv" style="padding: 32px; display: flex; flex-direction: column; gap: 28px;">
+<div class="pipe" style="position: relative; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; align-items: center;">
+<div class="pipe-line" aria-hidden="true" style="position: absolute; left: 4%; right: 4%; top: 50%; height: 1px; background: rgba(255,255,255,.12); overflow: hidden;"><div class="pipe-pulse"></div></div>
+<div class="mono" style="position: relative; text-align: center; padding: 14px 8px; border-radius: 12px; background: #0E1016; box-shadow: 0 0 0 1px rgba(255,255,255,.1) inset; font-size: 12px;">commit</div>
+<div class="mono" style="position: relative; text-align: center; padding: 14px 8px; border-radius: 12px; background: #0E1016; box-shadow: 0 0 0 1px rgba(255,255,255,.1) inset; font-size: 12px;">build</div>
+<div class="mono" style="position: relative; text-align: center; padding: 14px 8px; border-radius: 12px; background: #0E1016; box-shadow: 0 0 0 1px rgba(111,214,255,.5) inset; font-size: 12px; color: #CFE9FF;">playwright</div>
+<div class="mono" style="position: relative; text-align: center; padding: 14px 8px; border-radius: 12px; background: #0E1016; box-shadow: 0 0 0 1px rgba(160,107,255,.5) inset; font-size: 12px; color: #E3D6FF;">quality gate</div>
+<div class="mono" style="position: relative; text-align: center; padding: 14px 8px; border-radius: 12px; background: #0E1016; box-shadow: 0 0 0 1px rgba(255,255,255,.1) inset; font-size: 12px;">release</div>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 16px;">
+<div style="padding: 20px; border-radius: 14px; background: rgba(255,255,255,.02); box-shadow: 0 0 0 1px rgba(255,255,255,.07) inset; display: flex; flex-direction: column; gap: 12px;"><span style="font-size: 14px; color: #ECEEF3;">Defect leakage to production</span><svg viewBox="0 0 200 48" style="width: 100%; height: 48px;" aria-hidden="true"><path class="spark" d="M0 10 L30 14 L60 12 L90 22 L120 28 L150 34 L180 38 L200 40" fill="none" stroke="#6FD6FF" stroke-width="2"></path></svg><span class="mono" style="font-size: 11px; color: #7D8496;">target: down</span></div>
+<div style="padding: 20px; border-radius: 14px; background: rgba(255,255,255,.02); box-shadow: 0 0 0 1px rgba(255,255,255,.07) inset; display: flex; flex-direction: column; gap: 12px;"><span style="font-size: 14px; color: #ECEEF3;">Requirements test coverage</span><svg viewBox="0 0 200 48" style="width: 100%; height: 48px;" aria-hidden="true"><path class="spark" d="M0 40 L30 36 L60 34 L90 26 L120 22 L150 14 L180 12 L200 8" fill="none" stroke="#A06BFF" stroke-width="2"></path></svg><span class="mono" style="font-size: 11px; color: #7D8496;">target: up</span></div>
+<div style="padding: 20px; border-radius: 14px; background: rgba(255,255,255,.02); box-shadow: 0 0 0 1px rgba(255,255,255,.07) inset; display: flex; flex-direction: column; gap: 12px;"><span style="font-size: 14px; color: #ECEEF3;">Test automation stability</span><svg viewBox="0 0 200 48" style="width: 100%; height: 48px;" aria-hidden="true"><path class="spark" d="M0 34 L30 28 L60 30 L90 20 L120 18 L150 12 L180 12 L200 10" fill="none" stroke="#6FD6FF" stroke-width="2"></path></svg><span class="mono" style="font-size: 11px; color: #7D8496;">target: up</span></div>
+<div style="padding: 20px; border-radius: 14px; background: rgba(255,255,255,.02); box-shadow: 0 0 0 1px rgba(255,255,255,.07) inset; display: flex; flex-direction: column; gap: 12px;"><span style="font-size: 14px; color: #ECEEF3;">Defect resolution time</span><svg viewBox="0 0 200 48" style="width: 100%; height: 48px;" aria-hidden="true"><path class="spark" d="M0 8 L30 12 L60 18 L90 16 L120 26 L150 30 L180 36 L200 38" fill="none" stroke="#A06BFF" stroke-width="2"></path></svg><span class="mono" style="font-size: 11px; color: #7D8496;">target: down</span></div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="formats" class="sec">
+<div class="wrap" style="display: flex; flex-direction: column; gap: 40px;">
+<div class="rv" style="display: flex; flex-direction: column; gap: 16px; max-width: 760px;">
+<span class="kicker mono">How we work</span>
+<h2 class="h2 hd">Start with a diagnostic. Scale once you see results.</h2>
+</div>
+<div class="rv" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px;">
+<button type="button" class="step step-on" data-i="0" aria-pressed="true"><span class="mono" style="font-size: 12px; color: #7FC8F5;">01 · 2–4 weeks</span><span class="hd" style="font-size: 20px; font-weight: 600;">Rapid diagnostic</span></button>
+<button type="button" class="step step-off" data-i="1" aria-pressed="false"><span class="mono" style="font-size: 12px; color: #7FC8F5;">02 · 6–12 weeks</span><span class="hd" style="font-size: 20px; font-weight: 600;">Pilot</span></button>
+<button type="button" class="step step-off" data-i="2" aria-pressed="false"><span class="mono" style="font-size: 12px; color: #7FC8F5;">03 · 3–12 months</span><span class="hd" style="font-size: 20px; font-weight: 600;">Turnkey project</span></button>
+<button type="button" class="step step-off" data-i="3" aria-pressed="false"><span class="mono" style="font-size: 12px; color: #7FC8F5;">04 · from 6 months</span><span class="hd" style="font-size: 20px; font-weight: 600;">Dedicated team</span></button>
+</div>
+<div class="glass detail" style="padding: 32px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 32px; align-items: start;">
+<div style="display: flex; flex-direction: column; gap: 10px;"><span class="mono" style="font-size: 12px; color: #7D8496;">WHAT YOU GET</span><span style="font-size: 17px; line-height: 1.55;"><span id="f-get">An as-is report, 5–10 prioritised decisions with impact estimates, and a roadmap.</span></span></div>
+<div style="display: flex; flex-direction: column; gap: 10px;"><span class="mono" style="font-size: 12px; color: #7D8496;">TIMELINE &amp; PRICING</span><span style="font-size: 17px; line-height: 1.55;"><span id="f-term">2–4 weeks · fixed price</span></span></div>
+<div style="display: flex; flex-direction: column; gap: 14px; align-items: flex-start;"><span class="mono" style="font-size: 12px; color: #7D8496;">NEXT STEP</span><a class="btn btn-p" href="#contact"><span id="f-cta">Book a diagnostic</span> <span class="ar" aria-hidden="true">→</span></a></div>
+</div>
+</div>
+</section>
+
+<section id="why" class="sec">
+<div class="wrap" style="display: flex; flex-wrap: wrap; gap: 48px;">
+<div class="rv" style="flex: 1 1 320px; display: flex; flex-direction: column; gap: 16px;">
+<span class="kicker mono">Why Matura</span>
+<h2 class="h2 hd">Maturity means predictable results</h2>
+</div>
+<div style="flex: 2 1 560px; min-width: 0;">
+<div class="reason rv"><span class="mono" style="color: #7FC8F5;">01</span><div><div class="hd" style="font-size: 20px; font-weight: 600;">From strategy to go-live</div><p style="margin: 8px 0 0; color: #A7AEBF; line-height: 1.55;">Assessment, P&amp;L, board approval, delivery and support — with no hand-offs between vendors.</p></div></div>
+<div class="reason rv"><span class="mono" style="color: #7FC8F5;">02</span><div><div class="hd" style="font-size: 20px; font-weight: 600;">Experience with the largest IT landscapes</div><p style="margin: 8px 0 0; color: #A7AEBF; line-height: 1.55;">Our experts built platforms at top-10 banks, tier-1 telecom operators and national digital government platforms.</p></div></div>
+<div class="reason rv"><span class="mono" style="color: #7FC8F5;">03</span><div><div class="hd" style="font-size: 20px; font-weight: 600;">Regulation from day one</div><p style="margin: 8px 0 0; color: #A7AEBF; line-height: 1.55;">Central bank, critical infrastructure and information security requirements are built into the architecture — not chased at the finish line.</p></div></div>
+<div class="reason rv"><span class="mono" style="color: #7FC8F5;">04</span><div><div class="hd" style="font-size: 20px; font-weight: 600;">We fit into your environment</div><p style="margin: 8px 0 0; color: #A7AEBF; line-height: 1.55;">We work within your security, procurement and reporting procedures and take care of the admin.</p></div></div>
+<div class="reason rv"><span class="mono" style="color: #7FC8F5;">05</span><div><div class="hd" style="font-size: 20px; font-weight: 600;">Results in metrics</div><p style="margin: 8px 0 0; color: #A7AEBF; line-height: 1.55;">Every project starts with an as-is baseline and ends with a report on what changed.</p></div></div>
+</div>
+</div>
+</section>
+
+<section class="sec" aria-label="Industries">
+<div class="wrap" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px;">
+<div class="ind rv"><div class="hd" style="font-size: 18px; font-weight: 600;">Banking &amp; Fintech</div><p style="margin: 8px 0 0; color: #9AA1B2; font-size: 14px; line-height: 1.5;">Core banking, payments, digital banking, branches abroad</p></div>
+<div class="ind rv"><div class="hd" style="font-size: 18px; font-weight: 600;">Telecom</div><p style="margin: 8px 0 0; color: #9AA1B2; font-size: 14px; line-height: 1.5;">Operator financial services, ecosystem platforms</p></div>
+<div class="ind rv"><div class="hd" style="font-size: 18px; font-weight: 600;">Public sector &amp; critical infrastructure</div><p style="margin: 8px 0 0; color: #9AA1B2; font-size: 14px; line-height: 1.5;">Government platforms, technology sovereignty, secure development</p></div>
+<div class="ind rv"><div class="hd" style="font-size: 18px; font-weight: 600;">Enterprise</div><p style="margin: 8px 0 0; color: #9AA1B2; font-size: 14px; line-height: 1.5;">Processes, SDLC, quality, AI at work</p></div>
+</div>
+</section>
+
+<section id="contact" class="sec" style="padding-bottom: 120px;">
+<div class="wrap">
+<div class="glass rv" style="position: relative; overflow: hidden; padding: clamp(28px, 5vw, 64px); display: flex; flex-wrap: wrap; gap: 48px;">
+<div aria-hidden="true" style="position: absolute; inset: 0; background: radial-gradient(ellipse 50% 70% at 0% 0%, rgba(76,201,240,.14), transparent 60%);"></div>
+<div style="position: relative; flex: 1 1 320px; display: flex; flex-direction: column; gap: 18px;">
+<span class="kicker mono">Contact</span>
+<h2 class="h2 hd" style="font-size: clamp(30px, 3.4vw, 44px);">Tell us about your challenge — we’ll propose a format and a first step</h2>
+<p class="lead" style="font-size: 16px;">We start with a short call. If needed, we sign an NDA before going into detail.</p>
+</div>
+<form class="frm" style="position: relative; flex: 1 1 420px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px;">
+<label class="field">Name<input class="inp" type="text" name="name" autocomplete="name"></label>
+<label class="field">Company &amp; role<input class="inp" type="text" name="company" autocomplete="organization"></label>
+<label class="field">Email or phone<input class="inp" type="text" name="contact" autocomplete="email"></label>
+<label class="field">Practice<select class="inp" name="practice"><option>Strategy &amp; Transformation</option><option>International Expansion</option><option>Core Banking &amp; Payments</option><option>Architecture &amp; Modernization</option><option>Delivery Excellence</option><option>Artificial Intelligence</option></select></label>
+<label class="field" style="grid-column: 1 / -1;">Your challenge<textarea class="inp" name="task" rows="3" style="resize: vertical;"></textarea></label>
+<label style="grid-column: 1 / -1; display: flex; gap: 10px; align-items: flex-start; font-size: 13px; color: #9AA1B2; line-height: 1.5;"><input type="checkbox" name="consent" style="margin-top: 3px; width: 18px; height: 18px; accent-color: #6FD6FF; flex-shrink: 0;"><span>I agree to the processing of my personal data in accordance with the <a href="#top">privacy policy</a></span></label>
+<div style="grid-column: 1 / -1;"><button type="button" class="btn btn-p" style="border: 0; cursor: pointer; font-family: inherit;">Send request <span class="ar" aria-hidden="true">→</span></button></div>
+</form>
+</div>
+</div>
+</section>
+
+<footer style="border-top: 1px solid rgba(255,255,255,.06);">
+<div class="wrap" style="display: flex; flex-wrap: wrap; gap: 24px; justify-content: space-between; align-items: center; padding-top: 32px; padding-bottom: 32px; font-size: 13px; color: #8B92A3;">
+<span><span class="hd" style="color: #FFFFFF; font-weight: 600;">matura</span> · IT consulting where business, IT and regulation meet</span>
+<span class="mono">© 2026 [Legal entity] · Reg. no. [—] · <a href="#top">Privacy policy</a></span>
+</div>
+</footer>
+<a class="totop" href="#top" aria-label="Back to top"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"></path><path d="M5 12l7-7 7 7"></path></svg></a>
+
+</div>
+
+<script>
+(function () {
+  var data = [["An as-is report, 5–10 prioritised decisions with impact estimates, and a roadmap.", "2–4 weeks · fixed price", "Book a diagnostic"], ["One solution implemented in one team or process, a before/after measurement and a decision on scaling.", "6–12 weeks · fixed, or fixed + KPI bonus", "Discuss a pilot"], ["Transformation or implementation with target metrics, status tracking and board-level reporting.", "3–12 months · fixed per phase or T&M", "Discuss a project"], ["A cross-functional team or an SLA-based service: 24/7 core banking support, DevOps, testing.", "from 6 months · monthly fee under SLA", "Build a team"]];
+  var steps = document.querySelectorAll('.step');
+  var panel = document.querySelector('.detail');
+  function pick(i) {
+    steps.forEach(function (b, j) {
+      b.className = 'step ' + (i === j ? 'step-on' : 'step-off');
+      b.setAttribute('aria-pressed', i === j ? 'true' : 'false');
+    });
+    document.getElementById('f-get').textContent = data[i][0];
+    document.getElementById('f-term').textContent = data[i][1];
+    document.getElementById('f-cta').textContent = data[i][2];
+    panel.classList.remove('detail'); void panel.offsetWidth; panel.classList.add('detail');
+  }
+  steps.forEach(function (b, i) {
+    b.addEventListener('click', function () { pick(i); });
+    b.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight') { var n = (i + 1) % steps.length; steps[n].focus(); pick(n); }
+      if (e.key === 'ArrowLeft') { var p = (i + steps.length - 1) % steps.length; steps[p].focus(); pick(p); }
+    });
+  });
+  var top = document.querySelector('.totop');
+  function onScroll() { top.classList.toggle('show', window.scrollY > 700); }
+  window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+  // Fallback reveal for browsers without CSS scroll-driven animations (Safari, Firefox)
+  if (!(window.CSS && CSS.supports('animation-timeline: view()')) && 'IntersectionObserver' in window
+      && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.documentElement.classList.add('io');
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.rv, .rv-line').forEach(function (el) { io.observe(el); });
+  }
+})();
+</script>
+
+</body>
+</html>
