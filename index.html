@@ -11,8 +11,13 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
 <style>
 body { margin: 0; background: #07080B; }
+html { scroll-behavior: smooth; }
+section[id] { scroll-margin-top: 88px; }
+.totop { position: fixed; right: 24px; bottom: 24px; z-index: 30; width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; color: #ECEEF3; font-size: 18px; background: rgba(20,22,30,.8); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); box-shadow: 0 0 0 1px rgba(255,255,255,.12) inset, 0 10px 30px -10px rgba(0,0,0,.8); opacity: 0; pointer-events: none; transform: translateY(12px); transition: opacity .4s, transform .4s cubic-bezier(.22,1,.36,1), box-shadow .3s; }
+.totop.show { opacity: 1; pointer-events: auto; transform: none; }
+.totop:hover { color: #FFFFFF; box-shadow: 0 0 0 1px rgba(111,214,255,.6) inset, 0 0 24px -4px rgba(111,214,255,.5); }
 a { color: #8FD3FF; } a:hover { color: #C9E9FF; }
-.mt { font-family: Inter, system-ui, sans-serif; color: #ECEEF3; background: #07080B; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+.mt { font-family: Inter, system-ui, sans-serif; color: #ECEEF3; background: #07080B; overflow-x: clip; -webkit-font-smoothing: antialiased; }
 .wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; box-sizing: border-box; }
 .hd { font-family: 'Inter Tight', Inter, sans-serif; letter-spacing: -0.02em; }
 .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
@@ -120,6 +125,7 @@ a { color: #8FD3FF; } a:hover { color: #C9E9FF; }
   .term { font-size: 10.5px !important; padding: 14px 16px !important; }
 }
 @media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
   .term-line { opacity: 1; }
   .spark { stroke-dashoffset: 0; }
@@ -409,6 +415,7 @@ a { color: #8FD3FF; } a:hover { color: #C9E9FF; }
 <span class="mono">© 2026 [Юрлицо] · ИНН [—] · <a href="#top">Политика ПДн</a></span>
 </div>
 </footer>
+<a class="totop" href="#top" aria-label="Наверх"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"></path><path d="M5 12l7-7 7 7"></path></svg></a>
 
 </div>
 
@@ -439,6 +446,9 @@ a { color: #8FD3FF; } a:hover { color: #C9E9FF; }
       if (e.key === 'ArrowLeft') { var p = (i + steps.length - 1) % steps.length; steps[p].focus(); pick(p); }
     });
   });
+  var top = document.querySelector('.totop');
+  function onScroll() { top.classList.toggle('show', window.scrollY > 700); }
+  window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
   // Fallback reveal for browsers without CSS scroll-driven animations (Safari, Firefox)
   if (!(window.CSS && CSS.supports('animation-timeline: view()')) && 'IntersectionObserver' in window
       && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
