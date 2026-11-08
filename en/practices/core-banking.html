@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Core Banking &amp; Payments — Matura</title>
+<meta name="description" content="Our CFT implementation and support team covers about 20 banking domains — from the settlement centre to currency control.">
+<meta name="robots" content="noindex">
+<link rel="alternate" hreflang="ru" href="../../practices/core-banking.html">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap">
+<style>
+body { margin: 0; background: #07080B; }
+html { scroll-behavior: smooth; }
+section[id] { scroll-margin-top: 88px; }
+.totop { position: fixed; right: 24px; bottom: 24px; z-index: 30; width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; color: #ECEEF3; font-size: 18px; background: rgba(20,22,30,.8); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); box-shadow: 0 0 0 1px rgba(255,255,255,.12) inset, 0 10px 30px -10px rgba(0,0,0,.8); opacity: 0; pointer-events: none; transform: translateY(12px); transition: opacity .4s, transform .4s cubic-bezier(.22,1,.36,1), box-shadow .3s; }
+.totop.show { opacity: 1; pointer-events: auto; transform: none; }
+.totop:hover { color: #FFFFFF; box-shadow: 0 0 0 1px rgba(111,214,255,.6) inset, 0 0 24px -4px rgba(111,214,255,.5); }
+a { color: #8FD3FF; } a:hover { color: #C9E9FF; }
+.mt { font-family: Inter, system-ui, sans-serif; color: #ECEEF3; background: #07080B; overflow-x: clip; -webkit-font-smoothing: antialiased; }
+.wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; box-sizing: border-box; }
+.hd { font-family: 'Inter Tight', Inter, sans-serif; letter-spacing: -0.02em; }
+.mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+.grad { background: linear-gradient(92deg, #4CC9F0 0%, #7B8CFF 45%, #A06BFF 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.btn { display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 0 22px; border-radius: 999px; font-size: 15px; font-weight: 500; text-decoration: none; transition: transform .4s cubic-bezier(.22,1,.36,1), box-shadow .4s, background .4s; }
+.btn-p { color: #07080B; background: linear-gradient(92deg, #6FD6FF, #9B8CFF); box-shadow: 0 0 0 1px rgba(255,255,255,.12) inset, 0 8px 32px -8px rgba(110,140,255,.55); }
+.btn-p:hover { color: #07080B; transform: translateY(-2px); box-shadow: 0 0 0 1px rgba(255,255,255,.2) inset, 0 14px 44px -8px rgba(120,150,255,.8); }
+.btn-g { color: #ECEEF3; background: rgba(255,255,255,.04); box-shadow: 0 0 0 1px rgba(255,255,255,.12) inset; }
+.btn-g:hover { color: #FFFFFF; background: rgba(255,255,255,.08); }
+.btn .ar { transition: transform .4s cubic-bezier(.22,1,.36,1); }
+.btn:hover .ar { transform: translateX(4px); }
+.nav a.nl { color: #A7AEBF; text-decoration: none; font-size: 14px; padding: 10px 4px; transition: color .3s; }
+.nav a.nl:hover { color: #FFFFFF; }
+.eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: #9AA1B2; padding: 8px 14px; border-radius: 999px; background: rgba(255,255,255,.03); box-shadow: 0 0 0 1px rgba(255,255,255,.08) inset; }
+.dot { width: 6px; height: 6px; border-radius: 50%; background: #4CC9F0; box-shadow: 0 0 12px #4CC9F0; animation: pulse 2.4s ease-in-out infinite; }
+.hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(255,255,255,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.045) 1px, transparent 1px); background-size: 64px 64px; -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, #000 30%, transparent 75%); mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, #000 30%, transparent 75%); animation: gridIn 1.6s cubic-bezier(.22,1,.36,1) both; }
+.glow-a { position: absolute; width: 720px; height: 720px; left: 50%; top: -360px; transform: translateX(-30%); border-radius: 50%; background: radial-gradient(circle, rgba(76,201,240,.18), transparent 60%); filter: blur(20px); animation: drift 14s ease-in-out infinite alternate; }
+.glow-b { position: absolute; width: 640px; height: 640px; right: -200px; top: 120px; border-radius: 50%; background: radial-gradient(circle, rgba(123,92,255,.20), transparent 60%); filter: blur(24px); animation: drift 18s ease-in-out infinite alternate-reverse; }
+.h1 { font-size: clamp(36px, 5.2vw, 68px); line-height: 1.02; font-weight: 600; margin: 0; }
+.h2 { font-size: clamp(32px, 4vw, 52px); line-height: 1.06; font-weight: 600; margin: 0; }
+.lead { font-size: 19px; line-height: 1.55; color: #A7AEBF; margin: 0; }
+.word { display: inline-block; animation: wordIn 1s cubic-bezier(.22,1,.36,1) both; }
+.w2 { animation-delay: .08s; } .w3 { animation-delay: .16s; } .w4 { animation-delay: .24s; } .w5 { animation-delay: .32s; }
+.fade1 { animation: up .9s .45s cubic-bezier(.22,1,.36,1) both; }
+.fade2 { animation: up .9s .6s cubic-bezier(.22,1,.36,1) both; }
+.fade3 { animation: up .9s .75s cubic-bezier(.22,1,.36,1) both; }
+.glass { box-sizing: border-box; background: linear-gradient(180deg, rgba(28,31,42,.72), rgba(14,16,22,.72)); -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px); box-shadow: 0 0 0 1px rgba(255,255,255,.08) inset, 0 30px 80px -30px rgba(0,0,0,.8); border-radius: 18px; }
+.term-line { opacity: 0; animation: termIn .5s cubic-bezier(.22,1,.36,1) forwards; white-space: nowrap; }
+.t1 { animation-delay: 1.0s; } .t2 { animation-delay: 1.6s; } .t3 { animation-delay: 2.2s; } .t4 { animation-delay: 2.8s; } .t5 { animation-delay: 3.5s; }
+.caret { display: inline-block; width: 8px; height: 15px; background: #4CC9F0; vertical-align: -2px; animation: blink 1s steps(2) infinite; }
+.trace { stroke-dasharray: 3 9; animation: flow 3.5s linear infinite; }
+.comet { stroke-dasharray: 60 900; stroke-dashoffset: 960; animation: comet 4.2s cubic-bezier(.45,0,.2,1) infinite; }
+.c2 { animation-delay: 1.4s; } .c3 { animation-delay: 2.6s; }
+.node { animation: nodePulse 3s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+.n2 { animation-delay: .6s; } .n3 { animation-delay: 1.2s; } .n4 { animation-delay: 1.8s; }
+.stat { padding: 28px 0; border-top: 1px solid rgba(255,255,255,.08); }
+.sec { padding: 140px 0 0; }
+.kicker { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: #7FC8F5; }
+.bento { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 16px; }
+.s3 { grid-column: span 3; } .s2 { grid-column: span 2; }
+.card { position: relative; border-radius: 20px; padding: 32px; background: linear-gradient(180deg, #111319, #0C0E13); box-shadow: 0 0 0 1px rgba(255,255,255,.07) inset; overflow: hidden; transition: transform .6s cubic-bezier(.22,1,.36,1), box-shadow .6s; text-decoration: none; color: #ECEEF3; display: flex; flex-direction: column; gap: 14px; min-height: 260px; box-sizing: border-box; }
+.card::before { content: ''; position: absolute; inset: 0; border-radius: 20px; padding: 1px; background: conic-gradient(from var(--a, 0deg), transparent 0deg, rgba(76,201,240,.9) 60deg, rgba(160,107,255,.9) 120deg, transparent 180deg, transparent 360deg); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude; opacity: 0; transition: opacity .5s; animation: spin 6s linear infinite; }
+.card::after { content: ''; position: absolute; width: 420px; height: 420px; right: -160px; top: -200px; border-radius: 50%; background: radial-gradient(circle, rgba(110,150,255,.16), transparent 65%); opacity: .35; transition: opacity .6s, transform .8s cubic-bezier(.22,1,.36,1); pointer-events: none; }
+.card:hover { transform: translateY(-6px); color: #ECEEF3; }
+.card:hover::before { opacity: 1; }
+.card:hover::after { opacity: 1; transform: translate(-40px, 40px); }
+.card .more { margin-top: auto; font-size: 14px; color: #8FD3FF; display: inline-flex; gap: 8px; align-items: center; }
+.card .more .ar { transition: transform .5s cubic-bezier(.22,1,.36,1); }
+.card:hover .more .ar { transform: translateX(6px); }
+.chip { font-size: 12px; color: #B9C0CF; padding: 6px 10px; border-radius: 8px; background: rgba(255,255,255,.04); box-shadow: 0 0 0 1px rgba(255,255,255,.07) inset; }
+.num { font-size: 12px; color: #7D8496; }
+.tl-bar { height: 2px; background: linear-gradient(90deg, #4CC9F0, #A06BFF); transform-origin: left; }
+.pipe-pulse { position: absolute; top: 50%; width: 120px; height: 2px; margin-top: -1px; background: linear-gradient(90deg, transparent, #6FD6FF, #FFFFFF); filter: drop-shadow(0 0 8px #6FD6FF); animation: pipe 3.2s cubic-bezier(.45,0,.2,1) infinite; }
+.spark { stroke-dasharray: 400; stroke-dashoffset: 400; animation: draw 2.4s cubic-bezier(.22,1,.36,1) forwards; }
+.step { all: unset; box-sizing: border-box; cursor: pointer; display: flex; flex-direction: column; gap: 8px; padding: 22px; border-radius: 16px; min-height: 120px; transition: background .4s, box-shadow .4s, transform .4s cubic-bezier(.22,1,.36,1); }
+.step:hover { transform: translateY(-3px); }
+.step:focus-visible { outline: 2px solid #6FD6FF; outline-offset: 3px; }
+.step-off { background: rgba(255,255,255,.02); box-shadow: 0 0 0 1px rgba(255,255,255,.07) inset; color: #A7AEBF; }
+.step-on { background: linear-gradient(180deg, rgba(76,201,240,.12), rgba(123,92,255,.08)); box-shadow: 0 0 0 1px rgba(111,214,255,.55) inset, 0 0 40px -10px rgba(111,214,255,.45); color: #FFFFFF; }
+.detail { animation: up .6s cubic-bezier(.22,1,.36,1) both; }
+.reason { padding: 28px 0; border-top: 1px solid rgba(255,255,255,.08); display: grid; grid-template-columns: 64px minmax(0,1fr); gap: 16px; }
+.field { display: flex; flex-direction: column; gap: 8px; font-size: 13px; color: #A7AEBF; }
+.inp { font: inherit; font-size: 15px; color: #ECEEF3; background: rgba(255,255,255,.03); border: 0; box-shadow: 0 0 0 1px rgba(255,255,255,.10) inset; border-radius: 12px; padding: 14px 16px; min-height: 48px; box-sizing: border-box; transition: box-shadow .3s; }
+.inp:focus { outline: none; box-shadow: 0 0 0 1px #6FD6FF inset, 0 0 0 4px rgba(111,214,255,.15); }
+.ind { padding: 24px; border-radius: 16px; box-shadow: 0 0 0 1px rgba(255,255,255,.07) inset; background: rgba(255,255,255,.015); transition: box-shadow .4s, background .4s; }
+.ind:hover { box-shadow: 0 0 0 1px rgba(160,107,255,.5) inset; background: rgba(160,107,255,.05); }
+.rv { }
+@supports (animation-timeline: view()) {
+  .rv { animation: reveal linear both; animation-timeline: view(); animation-range: entry 0% cover 28%; }
+  .rv-line { animation: lineGrow linear both; animation-timeline: view(); animation-range: entry 10% cover 45%; }
+}
+@keyframes reveal { from { opacity: 0; transform: translateY(40px); filter: blur(8px); } to { opacity: 1; transform: none; filter: none; } }
+@keyframes lineGrow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes wordIn { from { opacity: 0; transform: translateY(.5em); filter: blur(10px); } to { opacity: 1; transform: none; filter: none; } }
+@keyframes up { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+@keyframes termIn { from { opacity: 0; transform: translateX(-8px); } to { opacity: 1; transform: none; } }
+@keyframes blink { 0% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes flow { to { stroke-dashoffset: -120; } }
+@keyframes comet { from { stroke-dashoffset: 960; } to { stroke-dashoffset: 0; } }
+@keyframes nodePulse { 0%, 100% { opacity: .55; transform: scale(1); } 50% { opacity: 1; transform: scale(1.25); } }
+@keyframes pulse { 0%, 100% { opacity: .5; } 50% { opacity: 1; } }
+@keyframes gridIn { from { opacity: 0; transform: scale(1.06); } to { opacity: 1; transform: none; } }
+@keyframes drift { from { transform: translate(-30%, 0); } to { transform: translate(-20%, 60px); } }
+@keyframes pipe { from { left: -120px; opacity: 0; } 15% { opacity: 1; } 85% { opacity: 1; } to { left: 100%; opacity: 0; } }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+@property --a { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
+@keyframes spin { to { --a: 360deg; } }
+@media (max-width: 900px) {
+  .bento { grid-template-columns: minmax(0, 1fr); }
+  .s3, .s2 { grid-column: auto; }
+  .nav-links { display: none !important; }
+  .hero-row { flex-direction: column; align-items: stretch !important; }
+  .hero-vis { flex: 0 0 auto !important; height: 520px !important; }
+  .sec { padding-top: 96px; }
+}
+@media (max-width: 600px) {
+  .nav-cta { display: none !important; }
+  .frm { grid-template-columns: minmax(0, 1fr) !important; }
+  .pipe { grid-template-columns: minmax(0, 1fr) !important; }
+  .pipe-line { display: none; }
+  .h2 { font-size: 30px !important; }
+  .h1 { font-size: 32px !important; }
+  .hero-vis { height: 430px !important; }
+  .hero-vis svg { height: 260px !important; }
+  .term { font-size: 10.5px !important; padding: 14px 16px !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .term-line { opacity: 1; }
+  .spark { stroke-dashoffset: 0; }
+}
+</style>
+
+<style>
+.io .rv { opacity: 0; transform: translateY(40px); filter: blur(8px); transition: opacity .9s cubic-bezier(.22,1,.36,1), transform .9s cubic-bezier(.22,1,.36,1), filter .9s; }
+.io .rv.in { opacity: 1; transform: none; filter: none; }
+.svc { position: relative; border-radius: 20px; padding: 28px; background: linear-gradient(180deg, #111319, #0C0E13); box-shadow: 0 0 0 1px rgba(255,255,255,.07) inset; display: flex; flex-direction: column; gap: 12px; transition: transform .6s cubic-bezier(.22,1,.36,1), box-shadow .6s; }
+.svc:hover { transform: translateY(-4px); box-shadow: 0 0 0 1px rgba(111,214,255,.45) inset, 0 20px 50px -30px rgba(111,214,255,.5); }
+.pill { display: inline-flex; align-items: center; min-height: 40px; padding: 0 16px; border-radius: 999px; font-size: 14px; color: #B9C0CF; text-decoration: none; background: rgba(255,255,255,.03); box-shadow: 0 0 0 1px rgba(255,255,255,.1) inset; transition: color .3s, box-shadow .3s, background .3s; }
+.pill:hover { color: #FFFFFF; background: rgba(111,214,255,.06); box-shadow: 0 0 0 1px rgba(111,214,255,.5) inset; }
+.ph1 { font-size: clamp(36px, 5vw, 64px); line-height: 1.04; font-weight: 600; margin: 0; }
+@media (max-width: 600px) { .ph1 { font-size: 34px; } }
+</style>
+</head>
+<body>
+<div class="mt" style="width: 100%; min-height: 100vh; position: relative;">
+<header class="nav" style="position: sticky; top: 0; z-index: 20; background: rgba(7,8,11,.72); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(255,255,255,.06);">
+<div class="wrap" style="display: flex; align-items: center; gap: 32px; height: 72px;">
+<a href="../index.html" aria-label="Matura — home" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #FFFFFF;"><svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6FD6FF"></stop><stop offset="1" stop-color="#A06BFF"></stop></linearGradient></defs><circle cx="14" cy="14" r="12" fill="none" stroke="url(#lg)" stroke-width="2"></circle><circle cx="14" cy="14" r="6.5" fill="none" stroke="url(#lg)" stroke-width="2" stroke-dasharray="28 13"></circle><circle cx="14" cy="14" r="2" fill="#FFFFFF"></circle></svg><span class="hd" style="font-size: 20px; font-weight: 600;">matura</span></a>
+<nav class="nav-links" aria-label="Main navigation" style="display: flex; gap: 24px; flex-grow: 1;"><a class="nl" href="../index.html#practices">Practices</a><a class="nl" href="../index.html#case">Cases</a><a class="nl" href="../index.html#delivery">Quality</a><a class="nl" href="../index.html#formats">How we work</a><a class="nl" href="../index.html#why">About</a></nav>
+<div style="display: flex; align-items: center; gap: 16px; margin-left: auto;">
+<div class="mono" style="display: flex; gap: 2px; padding: 3px; border-radius: 999px; box-shadow: 0 0 0 1px rgba(255,255,255,.1) inset; font-size: 12px;"><a href="../../practices/core-banking.html" hreflang="ru" style="padding: 8px 10px; border-radius: 999px; color: #8B92A3; text-decoration: none;">RU</a><a href="#top" hreflang="en" style="padding: 8px 10px; border-radius: 999px; background: rgba(255,255,255,.08); color: #FFFFFF; text-decoration: none;" aria-current="true">EN</a></div>
+<a class="btn btn-p nav-cta" href="../index.html#contact" style="min-height: 40px; padding: 0 18px; font-size: 14px;">Book a diagnostic</a>
+</div></div></header>
+<section id="top" style="position: relative; padding: 72px 0 40px; overflow: hidden;">
+<div class="hero-grid" aria-hidden="true"></div><div class="glow-a" aria-hidden="true"></div><div class="glow-b" aria-hidden="true"></div>
+<div class="wrap" style="position: relative; display: flex; flex-direction: column; gap: 28px;">
+<a href="../index.html#practices" class="mono" style="font-size: 13px; color: #8FD3FF; text-decoration: none; align-self: flex-start; padding: 10px 0;">← All practices</a>
+<span class="eyebrow mono fade1" style="align-self: flex-start;"><span class="dot"></span>Practice 03</span>
+<h1 class="ph1 hd fade1" style="max-width: 900px;">Core Banking &amp; Payments</h1>
+<p class="lead fade2" style="max-width: 760px;">Our CFT implementation and support team covers about 20 banking domains — from the settlement centre to currency control.</p>
+<div class="glass fade2" style="padding: 24px 28px; max-width: 860px; display: flex; flex-direction: column; gap: 10px;"><span class="kicker mono">The challenge</span><span class="hd grad" style="font-size: clamp(22px, 2.4vw, 30px); font-weight: 600; line-height: 1.25;">«Launch or replace the core banking system without stopping the operating day — on the regulator’s timeline.»</span></div>
+<div class="fade3" style="display: flex; flex-wrap: wrap; gap: 12px;"><a class="btn btn-p" href="../index.html#contact">Book a diagnostic <span class="ar" aria-hidden="true">→</span></a><a class="btn btn-g" href="../index.html#contact">Discuss your challenge</a></div>
+</div></section>
+<section class="sec" style="padding-top: 80px;"><div class="wrap" style="display: flex; flex-direction: column; gap: 32px;">
+<h2 class="h2 hd rv">What we do</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px;"><div class="svc rv"><span class="num mono">03.1</span><h3 class="hd" style="margin: 0; font-size: 21px; font-weight: 600; line-height: 1.25;">CFT core banking implementation and migration</h3><p style="margin: 0; color: #A7AEBF; line-height: 1.55; font-size: 15px;">CFT-Bank / CFT-Retail launch, deployment on 2MCA DBI in line with critical infrastructure requirements.</p></div><div class="svc rv"><span class="num mono">03.2</span><h3 class="hd" style="margin: 0; font-size: 21px; font-weight: 600; line-height: 1.25;">Core banking support and performance</h3><p style="margin: 0; color: #A7AEBF; line-height: 1.55; font-size: 15px;">24/7 second- and third-line support, Oracle and Postgres tuning, data masking between environments.</p></div><div class="svc rv"><span class="num mono">03.3</span><h3 class="hd" style="margin: 0; font-size: 21px; font-weight: 600; line-height: 1.25;">Payments and settlement services</h3><p style="margin: 0; color: #A7AEBF; line-height: 1.55; font-size: 15px;">Instant payments, CBDC, central bank settlement, SWIFT and SPFS, acquiring, wallet pay services.</p></div><div class="svc rv"><span class="num mono">03.4</span><h3 class="hd" style="margin: 0; font-size: 21px; font-weight: 600; line-height: 1.25;">Digital banking channels</h3><p style="margin: 0; color: #A7AEBF; line-height: 1.55; font-size: 15px;">Launch and migration of retail and corporate digital banking, mobile apps.</p></div></div>
+</div></section>
+<section class="sec"><div class="wrap"><div class="glass rv" style="padding: clamp(24px, 4vw, 48px); display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 32px; align-items: center;">
+<div style="display: flex; flex-direction: column; gap: 12px;"><span class="kicker mono">Where to start</span><span class="hd" style="font-size: clamp(26px, 3vw, 38px); font-weight: 600; line-height: 1.1;">Core Banking Health Check</span><span class="mono" style="font-size: 13px; color: #9AA1B2;">2–4 weeks · fixed price</span></div>
+<div style="display: flex; flex-direction: column; gap: 18px; align-items: flex-start;"><p style="margin: 0; font-size: 17px; line-height: 1.55; color: #ECEEF3;">Performance, technical debt, integrations and migration readiness.</p><a class="btn btn-p" href="../index.html#contact">Book a diagnostic <span class="ar" aria-hidden="true">→</span></a></div>
+</div></div></section>
+<section class="sec"><div class="wrap"><a href="../index.html#case" class="glass rv" style="display: flex; flex-wrap: wrap; gap: 24px; align-items: center; justify-content: space-between; padding: clamp(24px, 4vw, 48px); text-decoration: none; color: #ECEEF3; position: relative; overflow: hidden;">
+<div aria-hidden="true" style="position: absolute; inset: 0; background: radial-gradient(ellipse 60% 90% at 100% 0%, rgba(123,92,255,.16), transparent 60%);"></div>
+<div style="position: relative; display: flex; flex-direction: column; gap: 12px; max-width: 760px;"><span class="kicker mono">Team experience</span><span class="hd" style="font-size: clamp(24px, 2.6vw, 34px); font-weight: 600; line-height: 1.15;">A Russian bank’s branch in China — from an empty office to licence readiness</span><span style="color: #A7AEBF; line-height: 1.55;">Regulatory inspections passed, 2 data centres and core banking deployed, reporting for two jurisdictions.</span></div>
+<span class="btn btn-g" style="position: relative;">View case <span class="ar" aria-hidden="true">→</span></span></a></div></section>
+<section class="sec"><div class="wrap" style="display: flex; flex-direction: column; gap: 20px;"><span class="kicker mono rv">Other practices</span><div class="rv" style="display: flex; flex-wrap: wrap; gap: 10px;"><a class="pill" href="strategy.html">01 · Strategy &amp; Transformation</a><a class="pill" href="expansion.html">02 · International Expansion</a><a class="pill" href="architecture.html">04 · Architecture &amp; Modernization</a><a class="pill" href="delivery.html">05 · Delivery Excellence</a><a class="pill" href="ai.html">06 · Artificial Intelligence</a></div></div></section>
+<section class="sec" style="padding-bottom: 120px;"><div class="wrap"><div class="glass rv" style="position: relative; overflow: hidden; padding: clamp(28px, 5vw, 56px); display: flex; flex-wrap: wrap; gap: 24px; align-items: center; justify-content: space-between;">
+<div aria-hidden="true" style="position: absolute; inset: 0; background: radial-gradient(ellipse 50% 80% at 0% 0%, rgba(76,201,240,.14), transparent 60%);"></div>
+<span class="hd" style="position: relative; font-size: clamp(26px, 3vw, 40px); font-weight: 600; line-height: 1.1; max-width: 720px;">Tell us about your challenge — we’ll propose a format and a first step</span>
+<a class="btn btn-p" href="../index.html#contact" style="position: relative;">Get in touch <span class="ar" aria-hidden="true">→</span></a>
+</div></div></section>
+<footer style="border-top: 1px solid rgba(255,255,255,.06);"><div class="wrap" style="display: flex; flex-wrap: wrap; gap: 24px; justify-content: space-between; align-items: center; padding-top: 32px; padding-bottom: 32px; font-size: 13px; color: #8B92A3;">
+<span><span class="hd" style="color: #FFFFFF; font-weight: 600;">matura</span> · IT consulting where business, IT and regulation meet</span><span class="mono">© 2026 [Legal entity] · Reg. no. [—]</span></div></footer>
+<a class="totop" href="#top" aria-label="Back to top"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"></path><path d="M5 12l7-7 7 7"></path></svg></a>
+</div>
+<script>
+(function () {
+  var top = document.querySelector('.totop');
+  function onScroll() { top.classList.toggle('show', window.scrollY > 500); }
+  window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
+  if (!(window.CSS && CSS.supports('animation-timeline: view()')) && 'IntersectionObserver' in window
+      && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.documentElement.classList.add('io');
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (x) { if (x.isIntersecting) { x.target.classList.add('in'); io.unobserve(x.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.rv').forEach(function (el) { io.observe(el); });
+  }
+})();
+</script>
+</body>
+</html>

@@ -8,6 +8,7 @@
 | --- | --- |
 | `index.html` | Главная страница (RU), интерактивный прототип |
 | `en/index.html` | Главная страница (EN) — локализация для банков СНГ и Азии |
+| `practices/*.html`, `en/practices/*.html` | Шесть страниц практик на RU и EN: задача клиента, услуги, точка входа, кейс |
 | `docs/motion.html` | Спецификация анимаций и интерактива по разделам |
 | `docs/prompts.html` | Промпты для ИИ-графики (Midjourney / Flux / Recraft) |
 | `docs/preview-desktop.png`, `docs/preview-mobile.png` | Полностраничные скриншоты 1440 px и 390 px |
